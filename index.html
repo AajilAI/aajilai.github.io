@@ -719,20 +719,21 @@
   <div class="slide" id="s6">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
-      <h2>9 Slash Commands</h2>
-      <div class="tbl-wrap tbl-compact" style="margin-top:16px;">
+      <h2>Slash Commands</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI work · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
+      <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
         <table>
-          <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+          <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
           <tbody>
-            <tr><td class="td-mono">/aajil-mono [files]</td><td class="td-muted">Commit staged or specified changes to the aajil-mono monorepo with conventional commit formatting</td></tr>
-            <tr><td class="td-mono">/cross-repo-status</td><td class="td-muted">Health check across all services — branches, commits, open MRs, CI state</td></tr>
-            <tr><td class="td-mono">/cycle-report &lt;current|previous&gt;</td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
-            <tr><td class="td-mono">/infra-costs &lt;gcp|digitalocean|all&gt;</td><td class="td-muted">Infrastructure cost analysis with breakdown by service and environment</td></tr>
-            <tr><td class="td-mono">/mr-review &lt;project !MR&gt;</td><td class="td-muted">Structured GitLab MR review covering security, test coverage, and conventions</td></tr>
-            <tr><td class="td-mono">/service-sync &lt;service&gt; [BN-XXXX]</td><td class="td-muted">Full service workflow: branch setup → Linear ticket lookup/create → push → open MR via glab</td></tr>
-            <tr><td class="td-mono">/slack-announce &lt;channel&gt; &lt;purpose&gt;</td><td class="td-muted">Generate formatted Slack announcements from templates</td></tr>
-            <tr><td class="td-mono">/subtree-add &lt;remote&gt; &lt;url&gt;</td><td class="td-muted">Add a new service repo as a git subtree and push to origin</td></tr>
-            <tr><td class="td-mono">/triage &lt;csv|issues&gt;</td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates applied</td></tr>
+            <tr><td class="td-mono">/github-service-sync &lt;service&gt; [BN-XXXX]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Branch setup → Linear ticket → push → open MR</td></tr>
+            <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Dual-agent review (code + DevOps), auto-fixes Critical/Important findings before push</td></tr>
+            <tr><td class="td-mono">/github-pr-review</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Fan-out @code-reviewer + @devops on open GitHub PR — inline comments <span class="badge badge-dim" style="font-size:10px;">BN-5370</span></td></tr>
+            <tr><td class="td-mono">/github-cross-repo-status</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Health check across all services — branches, commits, CI state</td></tr>
+            <tr><td class="td-mono">/github-mr-review &lt;project !MR&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Structured GitLab MR review — security, coverage, conventions</td></tr>
+            <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
+            <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
+            <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
+            <tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
           </tbody>
         </table>
       </div>
