@@ -1065,7 +1065,12 @@
       <h2>Open Gaps</h2>
       <div class="two-col" style="margin-top:20px;">
         <div>
-          <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Phase 1B — bookish-beaver</div>
+          <div style="color:var(--red);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Secrets — Naming Inconsistency</div>
+          <ul class="item-list">
+            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>No env scope in secret names.</strong> Convention is <code>SERVICE_ORIGINAL_KEY</code> — but some PROD secrets have no <code>PROD_</code> marker. A secret named <code>ASQUARE_DATABASE_URL</code> could be dev <em>or</em> prod with no way to tell from the name alone.</span></li>
+            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Inconsistent across services.</strong> Some GitLab vars already carried <code>DEV_</code>/<code>PROD_</code> prefixes and were kept as-is. Others didn't, so env scope is implicit — encoded only in which <code>pull_gsm_*.py</code> script fetches them.</span></li>
+          </ul>
+          <div style="margin-top:20px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Phase 1B — bookish-beaver</div>
           <ul class="item-list">
             <li><span class="bullet" style="color:var(--gold)">▸</span><span>11 Phase 1B masked secrets still needed in GitHub org</span></li>
             <li><span class="bullet" style="color:var(--gold)">▸</span><span>223 legacy GitHub org secrets from the old push need deletion</span></li>
@@ -1140,17 +1145,17 @@
             <div style="font-family:var(--mono);font-size:14px;color:var(--gold);margin-bottom:8px;">SERVICE_PREFIX_ORIGINAL_KEY</div>
             <div class="tbl-wrap tbl-compact" style="margin-top:8px;border:none;border-radius:0;">
               <table style="font-size:12px;">
-                <thead><tr><th>Original</th><th>GSM secret name</th></tr></thead>
+                <thead><tr><th>Original GitLab key</th><th>GSM secret name</th><th>Env?</th></tr></thead>
                 <tbody>
-                  <tr><td class="td-mono">DATABASE_URL</td><td class="td-mono">ASQUARE_DATABASE_URL</td></tr>
-                  <tr><td class="td-mono">REDIS_HOST</td><td class="td-mono">ASQUARE_REDIS_HOST</td></tr>
-                  <tr><td class="td-mono">SECRET_KEY</td><td class="td-mono">RSQUARE_SECRET_KEY</td></tr>
-                  <tr><td class="td-mono">SENTRY_DSN</td><td class="td-mono">WSQUARE_SENTRY_DSN</td></tr>
+                  <tr><td class="td-mono">PROD_DATABASE_URL</td><td class="td-mono">ASQUARE_PROD_DATABASE_URL</td><td><span class="badge badge-green" style="font-size:10px;">explicit</span></td></tr>
+                  <tr><td class="td-mono">DATABASE_URL</td><td class="td-mono">ASQUARE_DATABASE_URL</td><td><span class="badge badge-red" style="font-size:10px;">ambiguous</span></td></tr>
+                  <tr><td class="td-mono">DEV_SECRET_KEY</td><td class="td-mono">RSQUARE_DEV_SECRET_KEY</td><td><span class="badge badge-green" style="font-size:10px;">explicit</span></td></tr>
+                  <tr><td class="td-mono">SENTRY_DSN</td><td class="td-mono">WSQUARE_SENTRY_DSN</td><td><span class="badge badge-red" style="font-size:10px;">ambiguous</span></td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <p style="font-size:12px;color:var(--text-dim);">Strip service prefix at runtime to reconstruct the original key. No collision between services in the same GSM project.</p>
+          <p style="font-size:12px;color:var(--red);margin-top:8px;">⚠ Env scope is implicit for secrets whose original GitLab key had no <code>DEV_</code>/<code>PROD_</code> prefix. Encoded only in which pull_gsm_*.py script fetches them — not in the name itself. Needs a naming audit + standardisation pass.</p>
         </div>
         <div>
           <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Workload Identity Federation</div>
