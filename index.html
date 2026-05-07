@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aajil Engineering Operating System</title>
+<title>AIDX — Aajil Engineering Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -572,7 +572,7 @@
 <div id="progress"></div>
 <div id="nav-dots"></div>
 <div id="tooltip"></div>
-<div id="counter"><span id="cur">1</span> / <span id="tot">20</span></div>
+<div id="counter"><span id="cur">1</span> / <span id="tot">21</span></div>
 
 <div id="kbd-hint">
   <span class="kbd">←→</span> Navigate
@@ -593,9 +593,9 @@
         <span class="logo-label">Engineering</span>
       </div>
       <div class="eyebrow">Internal Platform · Confidential</div>
-      <h1>The Aajil Engineering<br><span class="highlight">Operating System</span></h1>
+      <h1><span class="highlight">AIDX</span><br>Aajil Engineering Platform</h1>
       <p class="subtitle" style="max-width:600px;">
-        How we've built a self-documenting, agent-native platform where engineers own their stack, knowledge lives in the repo, and every service ships with zero tribal dependency.
+        AI-native developer experience for Aajil Engineering — a self-documenting, agent-powered platform where engineers own their stack, knowledge lives in the repo, and every service ships with zero tribal dependency.
       </p>
       <div class="hero-kicker">
         <span class="hero-tag">AIDX · AI-native Developer Experience</span>
@@ -798,8 +798,50 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 9: SECTION — GITHUB ══ -->
-  <div class="slide section-slide" id="s9">
+  <!-- ══════════════════════════════════════════ SLIDE 9: PERSISTENT MEMORY ══ -->
+  <div class="slide" id="s9">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Part 1</div>
+      <h2>Persistent Memory</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Cross-session AI memory — every feedback correction, project decision, and user preference persists beyond context window resets. Powered by the <a href="https://github.com/gastownhall/beads" target="_blank" style="color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(77,158,255,0.3);">gastownhall/beads</a> pattern.</p>
+      <div class="two-col" style="margin-top:20px;gap:24px;">
+        <div>
+          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">4 Memory Types</div>
+          <div class="tbl-wrap tbl-compact">
+            <table>
+              <thead><tr><th>Type</th><th>Stores</th></tr></thead>
+              <tbody>
+                <tr><td class="td-mono">user</td><td class="td-muted">Role, expertise, preferences — calibrates agent tone and depth across sessions</td></tr>
+                <tr><td class="td-mono">feedback</td><td class="td-muted">Corrections + confirmed approaches — never repeat the same mistake twice</td></tr>
+                <tr><td class="td-mono">project</td><td class="td-muted">Decisions, context, blockers — why things are the way they are</td></tr>
+                <tr><td class="td-mono">reference</td><td class="td-muted">Pointers to external systems — where to look, not what's there</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:14px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+            <div style="font-size:12px;color:var(--text-dim);margin-bottom:6px;">Example memory file</div>
+            <code style="font-size:11px;">meta/memory/feedback_ci_variables.md</code>
+            <div style="font-size:12px;color:var(--text-dim);margin-top:6px;line-height:1.5;">In CI reviews, never use YAML-level variable blocks — always recommend GitLab CI/CD variables. <strong style="color:var(--text-muted);">Why:</strong> prior incident where YAML vars leaked into job logs.</div>
+          </div>
+        </div>
+        <div>
+          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Architecture</div>
+          <ul class="item-list">
+            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>meta/memory/</strong> — one markdown file per memory, version-controlled alongside the platform brain. Each file has frontmatter <code>type</code>, <code>name</code>, and <code>description</code>.</span></li>
+            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>MEMORY.md index</strong> — a pointer-only index file loaded into every Claude Code session automatically. Max 200 lines — every entry is a one-liner.</span></li>
+            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>sync-memory-index hook</strong> — regenerates MEMORY.md on every memory file write. Zero manual maintenance.</span></li>
+            <li><span class="bullet" style="color:var(--purple)">▸</span><span><strong>gastownhall/beads</strong> — open-source pattern for file-per-memory with structured frontmatter. Enables cross-LLM, cross-session context continuity.</span></li>
+          </ul>
+          <div style="margin-top:16px;padding:12px 16px;background:rgba(155,109,255,0.06);border:1px solid rgba(155,109,255,0.2);border-radius:10px;font-size:13px;color:var(--text-muted);">
+            Memory survives context window resets, model upgrades, and new conversations. An engineer's preferences from month one are still respected on month twelve.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 10: SECTION — GITHUB ══ -->
+  <div class="slide section-slide" id="s10">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 2 of 3</div>
       <h1>GitHub<br>Transition</h1>
@@ -1200,35 +1242,39 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 20: WHAT'S NEXT ══ -->
-  <div class="slide" id="s20">
+  <!-- ══════════════════════════════════════════ SLIDE 21: WHAT'S NEXT ══ -->
+  <div class="slide" id="s21">
     <div class="slide-inner">
       <div class="eyebrow">Roadmap</div>
       <h2>What's Next</h2>
       <div class="next-grid">
         <div class="next-item">
-          <span class="ni-icon">🔒</span>
-          <div class="ni-text"><strong>Org hardening (Phase 0)</strong><br>Enable 2FA, disable members_can_create. 2 settings, zero downtime.</div>
+          <span class="ni-icon">🧠</span>
+          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: slash command surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
         </div>
         <div class="next-item">
-          <span class="ni-icon">📦</span>
-          <div class="ni-text"><strong>bookish-beaver Phase 1B</strong><br>Push 11 remaining masked secrets. Delete 223 legacy org secrets.</div>
+          <span class="ni-icon">🔧</span>
+          <div class="ni-text"><strong>Slash command surgery (BN-5368)</strong><br>Retire <code>/infra-costs</code> <code>/slack-announce</code> <code>/subtree-add</code>. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🚨</span>
+          <div class="ni-text"><strong>Sentry MCP + @sentry-triage (BN-5369)</strong><br>Real-time error loop: Sentry alert → @sentry-triage → patch → PR. Closes the gap between monitoring and fix — zero manual Slack relay.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🔀</span>
+          <div class="ni-text"><strong>@pr-reviewer fan-out (BN-5370)</strong><br>Spawn @code-reviewer + @devops in parallel on every GitHub PR. Inline comments via <code>claude-code-action</code>, not report files.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">♻️</span>
+          <div class="ni-text"><strong>Iterate-until-CI-green (BN-5371)</strong><br>@software-developer self-corrects until CI passes or hits 3-iteration hard stop. Autonomous code → test → fix loop scoped to the failing job.</div>
         </div>
         <div class="next-item">
           <span class="ni-icon">🛡</span>
-          <div class="ni-text"><strong>Branch protection (Phase 4)</strong><br>Apply to rsquare and wsquare main branches.</div>
+          <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
         </div>
         <div class="next-item">
-          <span class="ni-icon">📌</span>
-          <div class="ni-text"><strong>SHA pinning (BN-5304)</strong><br>Pin all third-party GitHub Actions to exact commit SHAs across all migrated services.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🏗</span>
-          <div class="ni-text"><strong>Shared workflows (BN-5289)</strong><br>8 reusable workflows — the enabler for automated PR gates and the AIDX PR-gate gap.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🗃</span>
-          <div class="ni-text"><strong>62 unassigned repos</strong><br>Add team-data pull assignment to manifest and run sync.</div>
+          <span class="ni-icon">🔒</span>
+          <div class="ni-text"><strong>Org hardening + SHA pinning</strong><br>2FA enforcement, disable members_can_create (Phase 0). Pin all third-party Actions to commit SHAs (BN-5304).</div>
         </div>
         <div class="next-item">
           <span class="ni-icon">🚀</span>
@@ -1250,7 +1296,7 @@ document.getElementById('tot').textContent = total;
 
 // Build nav dots
 const dotsEl = document.getElementById('nav-dots');
-const sectionSlides = new Set([3, 8, 15]); // 0-indexed
+const sectionSlides = new Set([3, 9, 16]); // 0-indexed: AIDX=3, GitHub=9, Secrets=16
 slides.forEach((_, i) => {
   const d = document.createElement('div');
   d.className = 'dot' + (sectionSlides.has(i) ? ' section-dot' : '');
