@@ -720,7 +720,7 @@
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>Slash Commands</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI work · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
+      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability · <code>gitlab-</code> for legacy MR work</p>
       <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
         <table>
           <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
@@ -729,7 +729,7 @@
             <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Dual-agent review (code + DevOps), auto-fixes Critical/Important findings before push</td></tr>
             <tr><td class="td-mono">/github-pr-review</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Fan-out @code-reviewer + @devops on open GitHub PR — inline comments <span class="badge badge-dim" style="font-size:10px;">BN-5370</span></td></tr>
             <tr><td class="td-mono">/github-cross-repo-status</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Health check across all services — branches, commits, CI state</td></tr>
-            <tr><td class="td-mono">/github-mr-review &lt;project !MR&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Structured GitLab MR review — security, coverage, conventions</td></tr>
+            <tr><td class="td-mono">/gitlab-mr-review &lt;project !MR&gt;</td><td><span class="badge badge-dim" style="font-size:10px;">gitlab</span></td><td class="td-muted">Structured GitLab MR review — security, coverage, conventions</td></tr>
             <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
             <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
             <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
