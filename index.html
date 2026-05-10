@@ -573,7 +573,7 @@
 <div id="progress"></div>
 <div id="nav-dots"></div>
 <div id="tooltip"></div>
-<div id="counter"><span id="cur">1</span> / <span id="tot">21</span></div>
+<div id="counter"><span id="cur">1</span> / <span id="tot">24</span></div>
 
 <div id="kbd-hint">
   <span class="kbd">←→</span> Navigate
@@ -641,20 +641,73 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 4: SECTION — AIDX ══ -->
-  <div class="slide section-slide" id="s4">
+  <!-- ══════════════════════════════════════════ SLIDE 3: SECTION — AIDX ══ -->
+  <div class="slide section-slide" id="s3">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 1 of 3</div>
       <h1>AIDX</h1>
       <p class="subtitle" style="max-width:520px;margin-top:16px;">
-        The AI-native developer experience layer. Ten hooks, six agents, seven skills, and a versioned knowledge brain — all running inside Claude Code.
+        The AI-native developer experience layer. A versioned knowledge brain, seven skills, ten hooks, six agents, persistent memory, and platform health — all running inside Claude Code.
       </p>
       <div class="section-num">01</div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 5: AIDX HOOKS ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 4: META/ BRAIN ══ -->
+  <div class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Part 1</div>
+      <h2>The meta/ Brain</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Versioned knowledge repo. Every design decision, plan, research report, and standard lives here — loaded into every Claude Code session.</p>
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card"><span class="card-icon">🗂</span><h3>context/</h3><p>Domain glossary, actor vocabulary, API contracts. <strong>technologies/</strong> — technology node docs: Credit Governance, Opportunity Registration, Platform State Machine Flow.</p></div>
+        <div class="card"><span class="card-icon">🧠</span><h3>memory/</h3><p>Persistent cross-session memory. User profile, feedback, project state, references — all version-controlled.</p></div>
+      </div>
+      <div style="margin:0;line-height:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 32" preserveAspectRatio="none" style="display:block;width:100%;height:26px;">
+          <line x1="250" y1="0" x2="250" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
+          <line x1="750" y1="0" x2="750" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
+          <line x1="250" y1="18" x2="750" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
+          <line x1="500" y1="18" x2="500" y2="26" stroke="#FFD60A" stroke-width="2"/>
+          <polygon points="500,32 492,24 508,24" fill="#FFD60A"/>
+        </svg>
+      </div>
+      <div class="grid-3" style="margin-top:0;">
+        <div class="card"><span class="card-icon">🏛</span><h3>designs/</h3><p>Architecture decisions, ADRs, RFCs. Canonical secrets and CI designs live here.</p></div>
+        <div class="card"><span class="card-icon">🗺</span><h3>plans/</h3><p>Implementation plans and provisioning trackers. Every migration phase tracked as a live document.</p></div>
+        <div class="card"><span class="card-icon">🔬</span><h3>research/</h3><p>Technical investigations, audits, env-vars catalogs, CI audits. 298 env vars catalogued across all services.</p></div>
+        <div class="card"><span class="card-icon">🤖</span><h3>agents/</h3><p>6 specialist agent definitions — source of truth for agent behavior. Auto-synced to .claude/agents/ at session start.</p></div>
+        <div class="card"><span class="card-icon">📋</span><h3>templates/</h3><p>Linear issue templates (bug, feature, improvements, spike) + Notion page templates. Never write free-form descriptions.</p></div>
+        <div class="card"><span class="card-icon">📏</span><h3>lex/</h3><p>Engineering standards — MR compliance, PR descriptions, code review format, README maintenance rules.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 5: SLASH COMMANDS ══ -->
   <div class="slide" id="s5">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Part 1</div>
+      <h2>Skills</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Invoked as <code>/skill-name</code> — domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
+      <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td class="td-mono">/github-service-sync &lt;service&gt; [BN-XXXX]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Branch setup → Linear ticket → push → open PR</td></tr>
+            <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Full review workflow: local review → auto-fix → commit → post GitHub comment → approve → merge</td></tr>
+            <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
+            <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
+            <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
+            <tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
+            <tr><td class="td-mono">/nvim-spawn</td><td><span class="badge badge-purple" style="font-size:10px;">tooling</span></td><td class="td-muted">Spawn a numbered Claude Code session in the running nvim instance and send it a task</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 6: AIDX HOOKS ══ -->
+  <div class="slide" id="s6">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>10 Active Hooks</h2>
@@ -672,29 +725,6 @@
             <tr><td class="td-dim">8</td><td class="td-mono">rtk-rewrite</td><td class="td-dim">PreToolUse: Bash (global)</td><td class="td-muted">RTK proxy rewrites git/bash commands through the token filter — <strong>60–90% token savings</strong> on dev operations</td></tr>
             <tr><td class="td-dim">9</td><td class="td-mono">bd prime (session)</td><td class="td-dim">SessionStart (global)</td><td class="td-muted">Restores full beads project intelligence context on every new Claude Code session</td></tr>
             <tr><td class="td-dim">10</td><td class="td-mono">bd prime (compact)</td><td class="td-dim">PreCompact (global)</td><td class="td-muted">Re-injects beads context before context window compression so no tracking is lost</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE 6: SLASH COMMANDS ══ -->
-  <div class="slide" id="s6">
-    <div class="slide-inner">
-      <div class="eyebrow">AIDX · Part 1</div>
-      <h2>Skills</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Invoked as <code>/skill-name</code> — domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
-      <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
-        <table>
-          <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
-          <tbody>
-            <tr><td class="td-mono">/github-service-sync &lt;service&gt; [BN-XXXX]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Branch setup → Linear ticket → push → open PR</td></tr>
-            <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Full review workflow: local review → auto-fix → commit → post GitHub comment → approve → merge</td></tr>
-            <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
-            <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
-            <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
-            <tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
-            <tr><td class="td-mono">/nvim-spawn</td><td><span class="badge badge-purple" style="font-size:10px;">tooling</span></td><td class="td-muted">Spawn a numbered Claude Code session in the running nvim instance and send it a task</td></tr>
           </tbody>
         </table>
       </div>
@@ -742,38 +772,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 8: META/ BRAIN ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 8: PERSISTENT MEMORY ══ -->
   <div class="slide" id="s8">
-    <div class="slide-inner">
-      <div class="eyebrow">AIDX · Part 1</div>
-      <h2>The meta/ Brain</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Versioned knowledge repo. Every design decision, plan, research report, and standard lives here — loaded into every Claude Code session.</p>
-      <div class="grid-2" style="margin-top:16px;">
-        <div class="card"><span class="card-icon">🗂</span><h3>context/</h3><p>Domain glossary, actor vocabulary, API contracts. <strong>technologies/</strong> — technology node docs: Credit Governance, Opportunity Registration, Platform State Machine Flow.</p></div>
-        <div class="card"><span class="card-icon">🧠</span><h3>memory/</h3><p>Persistent cross-session memory. User profile, feedback, project state, references — all version-controlled.</p></div>
-      </div>
-      <div style="margin:0;line-height:0;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 32" preserveAspectRatio="none" style="display:block;width:100%;height:26px;">
-          <line x1="250" y1="0" x2="250" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
-          <line x1="750" y1="0" x2="750" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
-          <line x1="250" y1="18" x2="750" y2="18" stroke="#D0CEC8" stroke-width="1.5"/>
-          <line x1="500" y1="18" x2="500" y2="26" stroke="#FFD60A" stroke-width="2"/>
-          <polygon points="500,32 492,24 508,24" fill="#FFD60A"/>
-        </svg>
-      </div>
-      <div class="grid-3" style="margin-top:0;">
-        <div class="card"><span class="card-icon">🏛</span><h3>designs/</h3><p>Architecture decisions, ADRs, RFCs. Canonical secrets and CI designs live here.</p></div>
-        <div class="card"><span class="card-icon">🗺</span><h3>plans/</h3><p>Implementation plans and provisioning trackers. Every migration phase tracked as a live document.</p></div>
-        <div class="card"><span class="card-icon">🔬</span><h3>research/</h3><p>Technical investigations, audits, env-vars catalogs, CI audits. 298 env vars catalogued across all services.</p></div>
-        <div class="card"><span class="card-icon">🤖</span><h3>agents/</h3><p>6 specialist agent definitions — source of truth for agent behavior. Auto-synced to .claude/agents/ at session start.</p></div>
-        <div class="card"><span class="card-icon">📋</span><h3>templates/</h3><p>Linear issue templates (bug, feature, improvements, spike) + Notion page templates. Never write free-form descriptions.</p></div>
-        <div class="card"><span class="card-icon">📏</span><h3>lex/</h3><p>Engineering standards — MR compliance, PR descriptions, code review format, README maintenance rules.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE 9: PERSISTENT MEMORY ══ -->
-  <div class="slide" id="s9">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>Persistent Memory</h2>
@@ -814,8 +814,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 10: BEADS ISSUE TRACKER ══ -->
-  <div class="slide" id="s10-beads">
+  <!-- ══════════════════════════════════════════ SLIDE 9: BEADS ISSUE TRACKER ══ -->
+  <div class="slide" id="s9">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>Beads — Project Intelligence</h2>
@@ -860,20 +860,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 11: SECTION — GITHUB ══ -->
-  <div class="slide section-slide" id="s10">
-    <div class="slide-inner" style="position:relative;">
-      <div class="eyebrow">Part 2 of 3</div>
-      <h1>GitHub<br>Transition</h1>
-      <p class="subtitle" style="max-width:520px;margin-top:16px;">
-        Moving from bild4/GitLab to AajilAI/GitHub. 141 repos fully mirrored. Platform services transitioning one by one — GitHub Actions CI (where applicable), org secrets, and team access control.
-      </p>
-      <div class="section-num">02</div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE: PLATFORM HEALTH ══ -->
-  <div class="slide" id="s3">
+  <!-- ══════════════════════════════════════════ SLIDE 10: PLATFORM HEALTH ══ -->
+  <div class="slide" id="s10">
     <div class="slide-inner">
       <div class="eyebrow">Status at a Glance · May 2026</div>
       <h2>Platform Health</h2>
@@ -916,8 +904,54 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE: REPO STRATEGY EVOLUTION ══ -->
-  <div class="slide" id="s10-repo-strategy">
+  <!-- ══════════════════════════════════════════ SLIDE 11: AIDX WHAT'S NEXT ══ -->
+  <div class="slide" id="s11">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Roadmap</div>
+      <h2>AIDX — What's Next</h2>
+      <div class="next-grid">
+        <div class="next-item">
+          <span class="ni-icon">🧠</span>
+          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🔧</span>
+          <div class="ni-text"><strong>Skills surgery (BN-5368)</strong><br>Retire stale skills. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🚨</span>
+          <div class="ni-text"><strong>Sentry MCP + @sentry-triage (BN-5369)</strong><br>Real-time error loop: Sentry alert → @sentry-triage → patch → PR. Closes the gap between monitoring and fix — zero manual Slack relay.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🔀</span>
+          <div class="ni-text"><strong>@pr-reviewer fan-out (BN-5370)</strong><br>Spawn @code-reviewer + @devops in parallel on every GitHub PR. Inline comments via <code>claude-code-action</code>, not report files.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">♻️</span>
+          <div class="ni-text"><strong>Iterate-until-CI-green (BN-5371)</strong><br>@software-developer self-corrects until CI passes or hits 3-iteration hard stop. Autonomous code → test → fix loop scoped to the failing job.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🛡</span>
+          <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 12: SECTION — GITHUB ══ -->
+  <div class="slide section-slide" id="s12">
+    <div class="slide-inner" style="position:relative;">
+      <div class="eyebrow">Part 2 of 3</div>
+      <h1>GitHub<br>Transition</h1>
+      <p class="subtitle" style="max-width:520px;margin-top:16px;">
+        Moving from bild4/GitLab to AajilAI/GitHub. 141 repos fully mirrored. Platform services transitioning one by one — GitHub Actions CI (where applicable), org secrets, and team access control.
+      </p>
+      <div class="section-num">02</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 13: REPO STRATEGY EVOLUTION ══ -->
+  <div class="slide" id="s13">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Repo Strategy: Three Approaches</h2>
@@ -982,8 +1016,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 10: NAMING CONVENTION ══ -->
-  <div class="slide" id="s10">
+  <!-- ══════════════════════════════════════════ SLIDE 14: NAMING CONVENTION ══ -->
+  <div class="slide" id="s14">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Repo Naming Convention</h2>
@@ -1010,8 +1044,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 11: TEAM MODEL ══ -->
-  <div class="slide" id="s11">
+  <!-- ══════════════════════════════════════════ SLIDE 15: TEAM MODEL ══ -->
+  <div class="slide" id="s15">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Team Access Model</h2>
@@ -1052,8 +1086,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 12: ORG HARDENING ══ -->
-  <div class="slide" id="s12">
+  <!-- ══════════════════════════════════════════ SLIDE 16: ORG HARDENING ══ -->
+  <div class="slide" id="s16">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Org Hardening Status</h2>
@@ -1112,8 +1146,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 13: CI INFRA ══ -->
-  <div class="slide" id="s13">
+  <!-- ══════════════════════════════════════════ SLIDE 17: CI INFRA ══ -->
+  <div class="slide" id="s17">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>CI Infrastructure</h2>
@@ -1158,8 +1192,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 14: SERVICE STATUS ══ -->
-  <div class="slide" id="s14">
+  <!-- ══════════════════════════════════════════ SLIDE 18: SERVICE STATUS ══ -->
+  <div class="slide" id="s18">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Service Migration Status</h2>
@@ -1257,8 +1291,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 15: OPEN GAPS ══ -->
-  <div class="slide" id="s15">
+  <!-- ══════════════════════════════════════════ SLIDE 19: OPEN GAPS ══ -->
+  <div class="slide" id="s19">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Part 2</div>
       <h2>Open Gaps</h2>
@@ -1289,8 +1323,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 16: SECTION — SECRETS ══ -->
-  <div class="slide section-slide" id="s16">
+  <!-- ══════════════════════════════════════════ SLIDE 20: SECTION — SECRETS ══ -->
+  <div class="slide section-slide" id="s20">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 3 of 3</div>
       <h1>Secrets<br>Architecture</h1>
@@ -1301,8 +1335,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 17: PLAN B vs C ══ -->
-  <div class="slide" id="s17">
+  <!-- ══════════════════════════════════════════ SLIDE 21: PLAN B vs C ══ -->
+  <div class="slide" id="s21">
     <div class="slide-inner">
       <div class="eyebrow">Secrets Architecture · Part 3</div>
       <h2>Plan B vs Plan C</h2>
@@ -1332,8 +1366,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 18: GSM NAMING + WIF ══ -->
-  <div class="slide" id="s18">
+  <!-- ══════════════════════════════════════════ SLIDE 22: GSM NAMING + WIF ══ -->
+  <div class="slide" id="s22">
     <div class="slide-inner">
       <div class="eyebrow">Secrets Architecture · Part 3</div>
       <h2>GSM Naming + WIF Infrastructure</h2>
@@ -1369,8 +1403,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 19: .ENV RUNTIME FLOW ══ -->
-  <div class="slide" id="s19">
+  <!-- ══════════════════════════════════════════ SLIDE 23: .ENV RUNTIME FLOW ══ -->
+  <div class="slide" id="s23">
     <div class="slide-inner">
       <div class="eyebrow">Secrets Architecture · Part 3</div>
       <h2>.env Runtime Flow (Plan C)</h2>
@@ -1399,42 +1433,8 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE: AIDX WHAT'S NEXT ══ -->
-  <div class="slide" id="s21-aidx">
-    <div class="slide-inner">
-      <div class="eyebrow">AIDX · Roadmap</div>
-      <h2>AIDX — What's Next</h2>
-      <div class="next-grid">
-        <div class="next-item">
-          <span class="ni-icon">🧠</span>
-          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🔧</span>
-          <div class="ni-text"><strong>Skills surgery (BN-5368)</strong><br>Retire stale skills. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🚨</span>
-          <div class="ni-text"><strong>Sentry MCP + @sentry-triage (BN-5369)</strong><br>Real-time error loop: Sentry alert → @sentry-triage → patch → PR. Closes the gap between monitoring and fix — zero manual Slack relay.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🔀</span>
-          <div class="ni-text"><strong>@pr-reviewer fan-out (BN-5370)</strong><br>Spawn @code-reviewer + @devops in parallel on every GitHub PR. Inline comments via <code>claude-code-action</code>, not report files.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">♻️</span>
-          <div class="ni-text"><strong>Iterate-until-CI-green (BN-5371)</strong><br>@software-developer self-corrects until CI passes or hits 3-iteration hard stop. Autonomous code → test → fix loop scoped to the failing job.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🛡</span>
-          <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE: GITHUB WHAT'S NEXT ══ -->
-  <div class="slide" id="s21-github">
+  <!-- ══════════════════════════════════════════ SLIDE 24: GITHUB WHAT'S NEXT ══ -->
+  <div class="slide" id="s24">
     <div class="slide-inner">
       <div class="eyebrow">GitHub Transition · Roadmap</div>
       <h2>GitHub — What's Next</h2>
@@ -1464,7 +1464,7 @@ document.getElementById('tot').textContent = total;
 
 // Build nav dots
 const dotsEl = document.getElementById('nav-dots');
-const sectionSlides = new Set([2, 9, 18]); // 0-indexed: AIDX=2, GitHub=9, Secrets=18
+const sectionSlides = new Set([2, 11, 19]); // 0-indexed: AIDX=2, GitHub=11, Secrets=19
 slides.forEach((_, i) => {
   const d = document.createElement('div');
   d.className = 'dot' + (sectionSlides.has(i) ? ' section-dot' : '');
