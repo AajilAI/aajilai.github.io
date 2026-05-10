@@ -8,26 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #080A12;
-    --surface: #0F1320;
-    --card: #161C2E;
-    --card-hover: #1E2540;
-    --border: #242D45;
-    --border-bright: #2E3A58;
-    --gold: #F0B340;
-    --gold-dim: #C48A1F;
-    --gold-glow: rgba(240,179,64,0.15);
-    --green: #2DD4A0;
-    --green-dim: rgba(45,212,160,0.12);
-    --red: #FF5A5A;
-    --red-dim: rgba(255,90,90,0.12);
-    --blue: #4D9EFF;
-    --blue-dim: rgba(77,158,255,0.12);
-    --orange: #FF8C42;
-    --purple: #9B6DFF;
-    --text: #E8EBF5;
-    --text-muted: #8892AA;
-    --text-dim: #555F78;
+    --bg: #FAFAF8;
+    --surface: #F5F4F0;
+    --card: #FFFFFF;
+    --card-hover: #F9F8F4;
+    --border: #E8E6E1;
+    --border-bright: #D0CEC8;
+    --gold: #E8A800;
+    --gold-dim: #C48A00;
+    --gold-glow: rgba(232,168,0,0.12);
+    --green: #16A34A;
+    --green-dim: rgba(22,163,74,0.10);
+    --red: #DC2626;
+    --red-dim: rgba(220,38,38,0.10);
+    --blue: #1D4ED8;
+    --blue-dim: rgba(29,78,216,0.10);
+    --orange: #EA580C;
+    --purple: #7C3AED;
+    --text: #111111;
+    --text-muted: #4B4B47;
+    --text-dim: #888885;
     --font: 'Inter', -apple-system, sans-serif;
     --mono: 'JetBrains Mono', monospace;
     --slide-w: 100vw;
@@ -146,7 +146,7 @@
 
   /* ─── SECTION SLIDES ────────────────────────── */
   .slide.section-slide {
-    background: radial-gradient(ellipse at center, rgba(240,179,64,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(232,168,0,0.10) 0%, transparent 65%);
   }
 
   /* ─── INNER CONTENT WRAPPER ─────────────────── */
@@ -220,7 +220,6 @@
   }
   .logo-wrap img {
     height: 44px;
-    filter: brightness(0) invert(1);
   }
   .logo-sep {
     width: 1px;
@@ -245,9 +244,10 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 20px 24px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   }
-  .card:hover { border-color: var(--border-bright); }
+  .card:hover { border-color: var(--border-bright); box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
   .card-icon {
     font-size: 22px;
     margin-bottom: 10px;
@@ -312,6 +312,7 @@
     border-radius: 12px;
     border: 1px solid var(--border);
     margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
   table {
     width: 100%;
@@ -390,11 +391,11 @@
   code {
     font-family: var(--mono);
     font-size: 12px;
-    background: rgba(240,179,64,0.08);
-    color: var(--gold);
+    background: rgba(232,168,0,0.10);
+    color: var(--gold-dim);
     padding: 2px 7px;
     border-radius: 4px;
-    border: 1px solid rgba(240,179,64,0.15);
+    border: 1px solid rgba(232,168,0,0.25);
   }
 
   /* ─── SECTION TITLE SLIDE ───────────────────── */
@@ -600,7 +601,7 @@
       <div class="hero-kicker">
         <span class="hero-tag">AIDX · AI-native Developer Experience</span>
         <span class="hero-tag">GitHub Transition · 141 repos</span>
-        <span class="hero-tag">Secrets Architecture · Plan B + Plan C (GSM)</span>
+        <span class="hero-tag">Secrets Architecture · Plan B (GitHub Secrets) + Plan C (GSM)</span>
         <span class="hero-tag">7 of 15 services live</span>
       </div>
     </div>
@@ -667,7 +668,7 @@
         <table>
           <thead><tr><th>Service</th><th>GitHub</th><th>Secrets</th><th>CI</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td class="td-mono">asquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">asquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-gold">Plan B · GitHub Secrets</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
             <tr><td class="td-mono">bookish-beaver</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
             <tr><td class="td-mono">rsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
             <tr><td class="td-mono">wsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
@@ -842,7 +843,47 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 10: SECTION — GITHUB ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 10: BEADS ISSUE TRACKER ══ -->
+  <div class="slide" id="s10-beads">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Part 1</div>
+      <h2>Beads — Project Intelligence</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Git-backed issue tracker with native Linear sync. Every ticket lives in <code>.beads/</code> alongside the code — versioned, diffable, offline-first.</p>
+      <div class="two-col" style="margin-top:20px;gap:24px;">
+        <div>
+          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Core Workflow</div>
+          <div class="tbl-wrap tbl-compact">
+            <table>
+              <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+              <tbody>
+                <tr><td class="td-mono">bd ready</td><td class="td-muted">Show issues with no blockers — your starting point every session</td></tr>
+                <tr><td class="td-mono">bd create</td><td class="td-muted">New issue with title, type, priority, description, acceptance criteria</td></tr>
+                <tr><td class="td-mono">bd update --external-ref</td><td class="td-muted">Link bead to a Linear ticket (BN-XXXX) for bidirectional tracking</td></tr>
+                <tr><td class="td-mono">bd dep add</td><td class="td-muted">Wire phase dependencies — blocks/blocked-by graph</td></tr>
+                <tr><td class="td-mono">bd close</td><td class="td-muted">Complete work — auto-unblocks dependents</td></tr>
+                <tr><td class="td-mono">bd remember</td><td class="td-muted">Persist cross-session knowledge (replaces MEMORY.md files)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Live Example — Credit Limit Hard Reset</div>
+          <ul class="item-list" style="gap:8px;">
+            <li><span class="bullet">▸</span><span><strong>Epic root:</strong> Credit Governance platform node — parent of all credit work</span></li>
+            <li><span class="bullet">▸</span><span><strong>Problem node:</strong> "Credit limits are wrong and untrustworthy" — the why behind 8 tickets</span></li>
+            <li><span class="bullet">▸</span><span><strong>8 phased issues:</strong> Phase 0 (reconcile) → Phase 1a (reset command) → Phase 1b (import) → Phase 1c (approval_trigger migration) → Phase 2 (baselines) → Phase 3 (snapshots) — all chained with <code>bd dep add</code></span></li>
+            <li><span class="bullet">▸</span><span><strong>Linear linked:</strong> every bead has <code>--external-ref BN-5384…5391</code> — one click from bead to Linear ticket</span></li>
+            <li><span class="bullet">▸</span><span><strong>Eval harness:</strong> Phase 1c also spawns an agent eval bead — full-portfolio validation of reset outcomes, not manual spot-checks</span></li>
+          </ul>
+          <div style="margin-top:16px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--text-muted);">
+            <code>bd show aajil-mono-fn9</code> → problem node · <code>bd show aajil-mono-8dc</code> → CG epic · <code>bd blocked</code> → full dependency graph
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 11: SECTION — GITHUB ══ -->
   <div class="slide section-slide" id="s10">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 2 of 3</div>
@@ -862,18 +903,17 @@
       <p class="subtitle" style="margin-bottom:4px;">GitLab subgroup prefix becomes GitHub repo prefix. Platform services at root have no prefix.</p>
       <div class="tbl-wrap" style="margin-top:16px;">
         <table>
-          <thead><tr><th>GitLab Subgroup</th><th>GitHub Prefix</th><th>Example repos</th></tr></thead>
+          <thead><tr><th>GitLab Path</th><th>GitHub Prefix</th><th>Example repos</th></tr></thead>
           <tbody>
             <tr><td class="td-muted">(root) — platform services</td><td><span class="badge badge-gold">no prefix</span></td><td class="td-mono td-dim">bookish-beaver, asquare, wsquare, auth, rsquare, tsquare</td></tr>
-            <tr><td class="td-mono">aisol</td><td class="td-mono">aisol-</td><td class="td-mono td-dim">aisol-document-classifier, aisol-kyb-service</td></tr>
-            <tr><td class="td-mono">risk</td><td class="td-mono">risk-</td><td class="td-mono td-dim">risk-dms, risk-scoring</td></tr>
+            <tr><td class="td-mono">risk/ai-solutions</td><td class="td-mono">aisol-</td><td class="td-mono td-dim">aisol-document-classifier, aisol-decision-dynamo</td></tr>
+            <tr><td class="td-mono">risk/agile-abyssinian</td><td class="td-mono">aa-</td><td class="td-mono td-dim">aa-bankrupcy-records, aa-migration-matrices</td></tr>
+            <tr><td class="td-mono">risk/cute-chartreux</td><td class="td-mono">cc-</td><td class="td-mono td-dim">cc-bank-statement-ocr, cc-cash-flow-modelling</td></tr>
+            <tr><td class="td-mono">risk/ornate-ocicat</td><td class="td-mono">oa-</td><td class="td-mono td-dim">oa-advanced-analytics-backend, oa-buildnow-data-loader</td></tr>
+            <tr><td class="td-mono">risk/plush-persian</td><td class="td-mono">pp-</td><td class="td-mono td-dim">pp-simulation-model</td></tr>
+            <tr><td class="td-mono">risk/radiant-ragamuffin</td><td class="td-mono">rr-</td><td class="td-mono td-dim">rr-decision-dynamo</td></tr>
             <tr><td class="td-mono">analytics</td><td class="td-mono">analytics-</td><td class="td-mono td-dim">analytics-ltv-km, analytics-aajil-cube</td></tr>
-            <tr><td class="td-mono">pp</td><td class="td-mono">pp-</td><td class="td-mono td-dim">pp-*</td></tr>
-            <tr><td class="td-mono">cc</td><td class="td-mono">cc-</td><td class="td-mono td-dim">cc-*</td></tr>
-            <tr><td class="td-mono">oa</td><td class="td-mono">oa-</td><td class="td-mono td-dim">oa-data-bq-kestra</td></tr>
-            <tr><td class="td-mono">scraping</td><td class="td-mono">scraping-</td><td class="td-mono td-dim">scraping-*</td></tr>
-            <tr><td class="td-mono">aa</td><td class="td-mono">aa-</td><td class="td-mono td-dim">aa-*</td></tr>
-            <tr><td class="td-mono">rr</td><td class="td-mono">rr-</td><td class="td-mono td-dim">rr-*</td></tr>
+            <tr><td class="td-mono">scraping</td><td class="td-mono">scraping-</td><td class="td-mono td-dim">scraping-aajil-collections-db, scraping-bn-pricing</td></tr>
           </tbody>
         </table>
       </div>
@@ -1042,8 +1082,8 @@
           <tbody>
             <tr>
               <td class="td-mono">asquare</td>
-              <td><span class="badge badge-blue">Plan C · GSM</span></td>
-              <td class="td-muted">Live — ~40 vars in GSM</td>
+              <td><span class="badge badge-gold">Plan B · GitHub Secrets</span></td>
+              <td class="td-muted">Live — org secrets + variables</td>
               <td><span class="badge badge-green">Green</span></td>
               <td><span class="badge badge-green">Complete</span></td>
             </tr>
@@ -1158,7 +1198,7 @@
             <li><span class="bullet">▸</span><span><strong>How:</strong> Secrets stored as GitHub org-level secrets/vars, injected directly into the Actions environment</span></li>
             <li><span class="bullet">▸</span><span><strong>Naming:</strong> <code>SERVICE_PREFIX_ENV_ORIGINAL_KEY</code><br><span style="font-size:12px;color:var(--text-dim)">e.g. BBGITHUB_DEV_DATABASE_URL</span></span></li>
             <li><span class="bullet">▸</span><span><strong>Use when:</strong> Service has &lt;50 secrets, no complex .env construction needed, simple key→env injection</span></li>
-            <li><span class="bullet">▸</span><span><strong>Service:</strong> asquare (only remaining Plan B service)</span></li>
+            <li><span class="bullet">▸</span><span><strong>Services:</strong> asquare — 168 entries (69 secrets + 99 variables) pushed as GitHub org secrets/variables</span></li>
           </ul>
         </div>
         <div class="card" style="border-color:rgba(77,158,255,0.3);">
@@ -1167,7 +1207,7 @@
             <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>How:</strong> Secrets stored in GCP Secret Manager. CI authenticates via Workload Identity Federation — zero long-lived credentials</span></li>
             <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>Naming:</strong> <code>SERVICE_PREFIX_ORIGINAL_KEY</code><br><span style="font-size:12px;color:var(--text-dim)">e.g. ASQUARE_DATABASE_URL</span></span></li>
             <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>Use when:</strong> Service needs full .env file construction, large secret count, or multi-environment support</span></li>
-            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>Services:</strong> bookish-beaver, rsquare, wsquare, tsquare, csquare (all except asquare)</span></li>
+            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>Services:</strong> bookish-beaver, rsquare, wsquare, tsquare, csquare (Plan C — runtime .env via GSM)</span></li>
           </ul>
         </div>
       </div>
@@ -1298,7 +1338,7 @@ document.getElementById('tot').textContent = total;
 
 // Build nav dots
 const dotsEl = document.getElementById('nav-dots');
-const sectionSlides = new Set([3, 9, 16]); // 0-indexed: AIDX=3, GitHub=9, Secrets=16
+const sectionSlides = new Set([3, 10, 17]); // 0-indexed: AIDX=3, GitHub=10, Secrets=17
 slides.forEach((_, i) => {
   const d = document.createElement('div');
   d.className = 'dot' + (sectionSlides.has(i) ? ' section-dot' : '');
