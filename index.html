@@ -602,7 +602,7 @@
         <span class="hero-tag">AIDX · AI-native Developer Experience</span>
         <span class="hero-tag">GitHub Transition · 141 repos</span>
         <span class="hero-tag">Secrets Architecture · Plan B (GitHub Secrets) + Plan C (GSM)</span>
-        <span class="hero-tag">7 of 15 services live</span>
+        <span class="hero-tag">10 of 15 services live</span>
       </div>
     </div>
   </div>
@@ -652,7 +652,7 @@
           <div class="stat-label">Repos mirrored to GitHub</div>
         </div>
         <div class="stat green">
-          <div class="stat-num">7</div>
+          <div class="stat-num">10</div>
           <div class="stat-label">Services fully migrated</div>
         </div>
         <div class="stat blue">
@@ -674,7 +674,11 @@
             <tr><td class="td-mono">wsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
             <tr><td class="td-mono">tsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
             <tr><td class="td-mono">csquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">auth · persistent-panda · autocras · +5</td><td><span class="badge badge-dim">Pending</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">Pending</span></td></tr>
+            <tr><td class="td-mono">document-management-domain</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">aisol-session-management</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">aisol-document-classifier</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">risk-dms</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">auth · persistent-panda · autocras · +1</td><td><span class="badge badge-dim">Pending</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">Pending</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -746,7 +750,7 @@
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>6 Specialist Agents</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Execution tools — not decision makers. No agent name appears in docs, Notion, or Linear. <strong>10+ PRs reviewed</strong>: 4 formal code reviews + 6 services through mandatory <code>@code-reviewer + @devops</code> parallel gate before every CI push.</p>
+      <p class="subtitle" style="margin-bottom:4px;">Execution tools — not decision makers. No agent name appears in docs, Notion, or Linear. <strong>20+ PRs reviewed</strong>: 4 formal product code reviews + 10 services through mandatory <code>@code-reviewer + @devops</code> parallel gate before every CI push. Every CI migration PR is blocked until both agents sign off.</p>
       <div class="agent-grid">
         <div class="agent-card researcher">
           <div class="agent-name">@researcher</div>
@@ -955,22 +959,23 @@
           <div style="margin-top:16px;padding:8px 12px;background:var(--gold-glow);border-radius:6px;font-size:12px;color:var(--gold-dim);font-weight:600;text-align:center;">Similar to Rahat's proposal · Manual clone · Self-managed</div>
         </div>
 
-        <!-- DX Unified Codebase -->
+        <!-- Chosen: Option 2 + build-os brain -->
         <div class="card" style="border-top:3px solid var(--green);display:flex;flex-direction:column;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">DX Unified Codebase</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Separate Repos + Brain ✓ Chosen</div>
           <div style="font-family:var(--mono);font-size:12px;line-height:1.9;background:var(--surface);border-radius:8px;padding:14px 16px;color:var(--text-muted);flex:1;">
-            <div style="color:var(--text);font-weight:600;margin-bottom:2px;">aajil-mono/</div>
-            <div>├─ bb/&nbsp;&nbsp; <span style="color:var(--text-dim)">(dir)</span></div>
-            <div>├─ asq/ <span style="color:var(--text-dim)">(dir)</span></div>
-            <div>├─ wsq/ <span style="color:var(--text-dim)">(dir)</span></div>
-            <div>└─ meta/ <span style="color:var(--text-dim)">(dir)</span></div>
+            <div style="color:var(--text);font-weight:600;margin-bottom:2px;">AajilAI/ (GitHub)</div>
+            <div>├─ bb/&nbsp;&nbsp; <span style="color:var(--text-dim)">(.git)</span></div>
+            <div>├─ asq/ <span style="color:var(--text-dim)">(.git)</span></div>
+            <div>├─ wsq/ <span style="color:var(--text-dim)">(.git)</span></div>
+            <div style="margin-top:6px;color:var(--text);font-weight:600;">build-os/ (brain)</div>
+            <div>└─ meta/ <span style="color:var(--green);font-weight:500;">(shared)</span></div>
           </div>
           <ul class="item-list" style="margin-top:16px;gap:6px;">
-            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">1 push, all services</span></li>
-            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Single history</span></li>
-            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Deploy independently</span></li>
+            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">1 push per service</span></li>
+            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Full history per svc</span></li>
+            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Brain shared across all</span></li>
           </ul>
-          <div style="margin-top:16px;padding:8px 12px;background:var(--green-dim);border-radius:6px;font-size:12px;color:var(--green);font-weight:600;text-align:center;">New proposal — build-os as brain, services in AajilAI/</div>
+          <div style="margin-top:16px;padding:8px 12px;background:var(--green-dim);border-radius:6px;font-size:12px;color:var(--green);font-weight:600;text-align:center;">Option 2 + build-os as the shared meta/ brain</div>
         </div>
 
       </div>
@@ -1205,6 +1210,34 @@
               <td><span class="badge badge-green">Complete</span></td>
             </tr>
             <tr>
+              <td class="td-mono">document-management-domain</td>
+              <td><span class="badge badge-green badge-dot">Migrated</span></td>
+              <td class="td-muted">Live — GSM+WIF · GHCR images · submodule token</td>
+              <td><span class="badge badge-green">Green</span></td>
+              <td><span class="badge badge-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">aisol-session-management</td>
+              <td><span class="badge badge-green badge-dot">Migrated</span></td>
+              <td class="td-muted">Live — GSM+WIF · GHCR images · OpenAPI docs publishing</td>
+              <td><span class="badge badge-green">Green</span></td>
+              <td><span class="badge badge-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">aisol-document-classifier</td>
+              <td><span class="badge badge-green badge-dot">Migrated</span></td>
+              <td class="td-muted">Live — GSM+WIF</td>
+              <td><span class="badge badge-green">Green</span></td>
+              <td><span class="badge badge-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">risk-dms (Papermerge Core)</td>
+              <td><span class="badge badge-green badge-dot">Migrated</span></td>
+              <td class="td-muted">Live — GSM+WIF · GHCR backend + frontend · Python/React</td>
+              <td><span class="badge badge-green">Green</span></td>
+              <td><span class="badge badge-green">Complete</span></td>
+            </tr>
+            <tr>
               <td class="td-mono">auth · thoth-scribe · opportunity</td>
               <td><span class="badge badge-dim">Pending</span></td>
               <td class="td-dim">—</td>
@@ -1212,7 +1245,7 @@
               <td><span class="badge badge-dim">Pending</span></td>
             </tr>
             <tr>
-              <td class="td-mono">persistent-panda · autocras · notification-center · +2</td>
+              <td class="td-mono">persistent-panda · autocras · notification-center</td>
               <td><span class="badge badge-dim">Pending</span></td>
               <td class="td-dim">—</td>
               <td class="td-dim">—</td>
@@ -1402,7 +1435,7 @@
         </div>
         <div class="next-item">
           <span class="ni-icon">🚀</span>
-          <div class="ni-text"><strong>Transition 8 remaining services</strong><br>auth · persistent-panda · autocras · notification-center · thoth-scribe · opportunity · +2</div>
+          <div class="ni-text"><strong>Transition 5 remaining services</strong><br>auth · persistent-panda · autocras · notification-center · thoth-scribe · opportunity</div>
         </div>
       </div>
     </div>
