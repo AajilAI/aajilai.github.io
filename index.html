@@ -616,7 +616,7 @@
         <div>
           <div style="color:var(--gold);font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;">WHAT</div>
           <ul class="item-list">
-            <li><span class="bullet">▸</span><span><strong>AIDX</strong> — 8-hook productivity layer wired into Claude Code. Hooks, agents, persistent memory, slash commands, and a versioned knowledge brain.</span></li>
+            <li><span class="bullet">▸</span><span><strong>AIDX</strong> — 10-hook productivity layer wired into Claude Code. Hooks, agents, persistent memory, slash commands, and a versioned knowledge brain.</span></li>
             <li><span class="bullet">▸</span><span><strong>GitHub Transition</strong> — Moving all 141 repos from bild4/GitLab to AajilAI/GitHub. 7 platform services fully live. Not all services have GitLab CI — those transition code + secrets only.</span></li>
             <li><span class="bullet">▸</span><span><strong>Secrets Architecture</strong> — Plan B (GitHub org secrets) for simple services; Plan C (GCP Secret Manager + WIF) for services needing runtime .env construction.</span></li>
           </ul>
@@ -632,7 +632,7 @@
         <div>
           <div style="color:var(--blue);font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;">HOW</div>
           <ul class="item-list">
-            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>8 active hooks</strong> enforce standards, block credential leaks, maintain memory, auto-commit the brain.</span></li>
+            <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>10 active hooks</strong> enforce standards, proxy token-heavy commands, restore context, maintain memory, auto-commit the brain.</span></li>
             <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>6 specialist agents</strong> run in parallel for research, implementation, review, and DevOps.</span></li>
             <li><span class="bullet" style="color:var(--blue)">▸</span><span><strong>meta/ brain</strong> is the single source of truth — versioned designs, plans, research, and templates.</span></li>
           </ul>
@@ -656,7 +656,7 @@
           <div class="stat-label">Services fully migrated</div>
         </div>
         <div class="stat blue">
-          <div class="stat-num">8</div>
+          <div class="stat-num">10</div>
           <div class="stat-label">Active AIDX hooks</div>
         </div>
         <div class="stat purple">
@@ -691,7 +691,7 @@
       <div class="eyebrow">Part 1 of 3</div>
       <h1>AIDX</h1>
       <p class="subtitle" style="max-width:520px;margin-top:16px;">
-        The AI-native developer experience layer. Eight hooks, six agents, nine slash commands, and a versioned knowledge brain — all running inside Claude Code.
+        The AI-native developer experience layer. Ten hooks, six agents, seven slash commands, and a versioned knowledge brain — all running inside Claude Code.
       </p>
       <div class="section-num">01</div>
     </div>
@@ -701,19 +701,21 @@
   <div class="slide" id="s5">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
-      <h2>8 Active Hooks</h2>
+      <h2>10 Active Hooks</h2>
       <div class="tbl-wrap tbl-compact" style="margin-top:16px;">
         <table>
           <thead><tr><th>#</th><th>Hook</th><th>Trigger</th><th>What it enforces</th></tr></thead>
           <tbody>
-            <tr><td class="td-dim">1</td><td class="td-mono">sync-memory-index</td><td class="td-dim">meta/memory/ write</td><td class="td-muted">Keeps MEMORY.md current whenever a memory file changes</td></tr>
+            <tr><td class="td-dim">1</td><td class="td-mono">sync-memory-index</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Keeps MEMORY.md current whenever a memory file changes</td></tr>
             <tr><td class="td-dim">2</td><td class="td-mono">log-prompt</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Captures every prompt per-contributor per-service to daily dated log files</td></tr>
-            <tr><td class="td-dim">3</td><td class="td-mono">enforce-credential-safety</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted"><strong>Hard-blocks</strong> any prompt containing a credential pattern before it reaches Anthropic API; emails maysra@aajil.sa on detection</td></tr>
-            <tr><td class="td-dim">4</td><td class="td-mono">enforce-workspace-updates</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Forces What's New + README + CLAUDE.md sync on any developer-visible change</td></tr>
-            <tr><td class="td-dim">5</td><td class="td-mono">enforce-script-to-file</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted"><strong>Blocks inline multi-line bash.</strong> All scripts must be written to meta/scripts/ first — zero /tmp usage</td></tr>
-            <tr><td class="td-dim">6</td><td class="td-mono">sync-commands-table</td><td class="td-dim">.claude/commands/ write</td><td class="td-muted">Regenerates the slash commands table in CLAUDE.md whenever a skill changes</td></tr>
-            <tr><td class="td-dim">7</td><td class="td-mono">update-meta-graph</td><td class="td-dim">meta/ write</td><td class="td-muted">Regenerates GRAPH.md (Obsidian knowledge graph index) on every meta/ write</td></tr>
-            <tr><td class="td-dim">8</td><td class="td-mono">auto-commit-meta</td><td class="td-dim">PostToolUse: Write</td><td class="td-muted">Auto-commits meta/ changes so no brain update is ever lost between sessions</td></tr>
+            <tr><td class="td-dim">3</td><td class="td-mono">enforce-workspace-updates</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted">Forces What's New + README + CLAUDE.md sync on any developer-visible change</td></tr>
+            <tr><td class="td-dim">4</td><td class="td-mono">enforce-script-to-file</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted"><strong>Blocks inline multi-line bash.</strong> All scripts must be written to meta/scripts/ first — zero /tmp usage</td></tr>
+            <tr><td class="td-dim">5</td><td class="td-mono">sync-commands-table</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates the slash commands table in CLAUDE.md whenever a skill changes</td></tr>
+            <tr><td class="td-dim">6</td><td class="td-mono">update-meta-graph</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates GRAPH.md (Obsidian knowledge graph index) on every meta/ write</td></tr>
+            <tr><td class="td-dim">7</td><td class="td-mono">auto-commit-meta</td><td class="td-dim">Stop</td><td class="td-muted">Auto-commits meta/ changes so no brain update is ever lost between sessions</td></tr>
+            <tr><td class="td-dim">8</td><td class="td-mono">rtk-rewrite</td><td class="td-dim">PreToolUse: Bash (global)</td><td class="td-muted">RTK proxy rewrites git/bash commands through the token filter — <strong>60–90% token savings</strong> on dev operations</td></tr>
+            <tr><td class="td-dim">9</td><td class="td-mono">bd prime (session)</td><td class="td-dim">SessionStart (global)</td><td class="td-muted">Restores full beads project intelligence context on every new Claude Code session</td></tr>
+            <tr><td class="td-dim">10</td><td class="td-mono">bd prime (compact)</td><td class="td-dim">PreCompact (global)</td><td class="td-muted">Re-injects beads context before context window compression so no tracking is lost</td></tr>
           </tbody>
         </table>
       </div>
@@ -725,20 +727,18 @@
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>Slash Commands</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability · <code>gitlab-</code> for legacy MR work</p>
+      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
       <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
         <table>
           <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
           <tbody>
-            <tr><td class="td-mono">/github-service-sync &lt;service&gt; [BN-XXXX]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Branch setup → Linear ticket → push → open MR</td></tr>
-            <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Dual-agent review (code + DevOps), auto-fixes Critical/Important findings before push</td></tr>
-            <tr><td class="td-mono">/github-pr-review</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Fan-out @code-reviewer + @devops on open GitHub PR — inline comments <span class="badge badge-dim" style="font-size:10px;">BN-5370</span></td></tr>
-            <tr><td class="td-mono">/github-cross-repo-status</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Health check across all services — branches, commits, CI state</td></tr>
-            <tr><td class="td-mono">/gitlab-mr-review &lt;project !MR&gt;</td><td><span class="badge badge-dim" style="font-size:10px;">gitlab</span></td><td class="td-muted">Structured GitLab MR review — security, coverage, conventions</td></tr>
+            <tr><td class="td-mono">/github-service-sync &lt;service&gt; [BN-XXXX]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Branch setup → Linear ticket → push → open PR</td></tr>
+            <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Full review workflow: local review → auto-fix → commit → post GitHub comment → approve → merge</td></tr>
             <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
             <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
             <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
             <tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
+            <tr><td class="td-mono">/nvim-spawn</td><td><span class="badge badge-purple" style="font-size:10px;">tooling</span></td><td class="td-muted">Spawn a numbered Claude Code session in the running nvim instance and send it a task</td></tr>
           </tbody>
         </table>
       </div>
