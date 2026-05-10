@@ -158,11 +158,11 @@
 
   /* ─── TYPOGRAPHY ────────────────────────────── */
   .eyebrow {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-dim);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -177,7 +177,7 @@
   }
 
   h1 {
-    font-size: clamp(36px, 4vw, 64px);
+    font-size: clamp(42px, 5vw, 72px);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.03em;
@@ -191,20 +191,20 @@
   }
 
   h2 {
-    font-size: clamp(28px, 3vw, 44px);
+    font-size: clamp(32px, 3.5vw, 52px);
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
 
   h3 {
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp(20px, 2.2vw, 28px);
     font-weight: 600;
     letter-spacing: -0.01em;
   }
 
   .subtitle {
-    font-size: clamp(15px, 1.6vw, 19px);
+    font-size: clamp(16px, 1.8vw, 21px);
     color: var(--text-muted);
     line-height: 1.6;
     margin-top: 16px;
@@ -317,16 +317,16 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13px;
+    font-size: 14px;
   }
   thead th {
-    background: var(--card);
+    background: var(--surface);
     color: var(--text-muted);
     font-weight: 600;
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 12px 16px;
+    padding: 13px 18px;
     text-align: left;
     border-bottom: 1px solid var(--border);
   }
@@ -335,16 +335,16 @@
     transition: background 0.15s;
   }
   tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody tr:hover { background: var(--surface); }
   tbody td {
-    padding: 11px 16px;
+    padding: 12px 18px;
     color: var(--text);
     vertical-align: top;
-    line-height: 1.45;
+    line-height: 1.5;
   }
-  .td-mono { font-family: var(--mono); font-size: 12px; color: var(--gold); }
+  .td-mono { font-family: var(--mono); font-size: 13px; color: var(--gold-dim); }
   .td-muted { color: var(--text-muted); }
-  .td-dim { color: var(--text-dim); font-size: 12px; }
+  .td-dim { color: var(--text-dim); font-size: 13px; }
 
   /* ─── BADGES ────────────────────────────────── */
   .badge {
@@ -375,8 +375,8 @@
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.55;
     color: var(--text-muted);
   }
   .item-list .bullet {
@@ -476,8 +476,8 @@
   }
 
   /* ─── COMPACT TABLE VARIANT ─────────────────── */
-  .tbl-compact thead th { padding: 9px 12px; }
-  .tbl-compact tbody td { padding: 8px 12px; font-size: 12.5px; }
+  .tbl-compact thead th { padding: 10px 14px; }
+  .tbl-compact tbody td { padding: 9px 14px; font-size: 13.5px; }
 
   /* ─── AGENT CARDS ───────────────────────────── */
   .agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
@@ -501,9 +501,9 @@
   .agent-card.reviewer::after { background: var(--gold); }
   .agent-card.dev::after { background: var(--orange); }
   .agent-card.devops::after { background: var(--red); }
-  .agent-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; font-family: var(--mono); }
-  .agent-role { font-size: 12px; color: var(--gold); margin-bottom: 8px; }
-  .agent-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  .agent-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; font-family: var(--mono); }
+  .agent-role { font-size: 13px; color: var(--gold-dim); margin-bottom: 8px; }
+  .agent-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
   /* ─── WHAT'S NEXT ───────────────────────────── */
   .next-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
@@ -746,7 +746,7 @@
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>6 Specialist Agents</h2>
-      <p class="subtitle" style="margin-bottom:4px;">All outputs are authored by <strong>Maysra Gamal</strong>. Agents are execution tools — no agent name ever appears in docs, Notion, or Linear.</p>
+      <p class="subtitle" style="margin-bottom:4px;">All outputs are authored by <strong>Maysra Gamal</strong>. Agents are execution tools — no agent name appears in docs, Notion, or Linear. <strong>10+ PRs reviewed</strong>: 4 formal code reviews + 6 services gated through mandatory <code>@code-reviewer + @devops</code> parallel review before every CI push.</p>
       <div class="agent-grid">
         <div class="agent-card researcher">
           <div class="agent-name">@researcher</div>
@@ -848,37 +848,43 @@
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
       <h2>Beads — Project Intelligence</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Git-backed issue tracker with native Linear sync. Every ticket lives in <code>.beads/</code> alongside the code — versioned, diffable, offline-first.</p>
-      <div class="two-col" style="margin-top:20px;gap:24px;">
-        <div>
-          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Core Workflow</div>
-          <div class="tbl-wrap tbl-compact">
-            <table>
-              <thead><tr><th>Command</th><th>What it does</th></tr></thead>
-              <tbody>
-                <tr><td class="td-mono">bd ready</td><td class="td-muted">Show issues with no blockers — your starting point every session</td></tr>
-                <tr><td class="td-mono">bd create</td><td class="td-muted">New issue with title, type, priority, description, acceptance criteria</td></tr>
-                <tr><td class="td-mono">bd update --external-ref</td><td class="td-muted">Link bead to a Linear ticket (BN-XXXX) for bidirectional tracking</td></tr>
-                <tr><td class="td-mono">bd dep add</td><td class="td-muted">Wire phase dependencies — blocks/blocked-by graph</td></tr>
-                <tr><td class="td-mono">bd close</td><td class="td-muted">Complete work — auto-unblocks dependents</td></tr>
-                <tr><td class="td-mono">bd remember</td><td class="td-muted">Persist cross-session knowledge (replaces MEMORY.md files)</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <div style="color:var(--text-muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Live Example — Credit Limit Hard Reset</div>
-          <ul class="item-list" style="gap:8px;">
-            <li><span class="bullet">▸</span><span><strong>Epic root:</strong> Credit Governance platform node — parent of all credit work</span></li>
-            <li><span class="bullet">▸</span><span><strong>Problem node:</strong> "Credit limits are wrong and untrustworthy" — the why behind 8 tickets</span></li>
-            <li><span class="bullet">▸</span><span><strong>8 phased issues:</strong> Phase 0 (reconcile) → Phase 1a (reset command) → Phase 1b (import) → Phase 1c (approval_trigger migration) → Phase 2 (baselines) → Phase 3 (snapshots) — all chained with <code>bd dep add</code></span></li>
-            <li><span class="bullet">▸</span><span><strong>Linear linked:</strong> every bead has <code>--external-ref BN-5384…5391</code> — one click from bead to Linear ticket</span></li>
-            <li><span class="bullet">▸</span><span><strong>Eval harness:</strong> Phase 1c also spawns an agent eval bead — full-portfolio validation of reset outcomes, not manual spot-checks</span></li>
-          </ul>
-          <div style="margin-top:16px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--text-muted);">
-            <code>bd show aajil-mono-fn9</code> → problem node · <code>bd show aajil-mono-8dc</code> → CG epic · <code>bd blocked</code> → full dependency graph
-          </div>
-        </div>
+      <p class="subtitle" style="margin-bottom:4px;">Git-backed issue tracker. 53 issues across 4 active projects — all Linear-linked, dependency-chained, versioned alongside the code in <code>.beads/</code>.</p>
+      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-top:16px;margin-bottom:20px;">
+        <div class="stat gold"><div class="stat-num" style="font-size:36px;">53</div><div class="stat-label">Total issues</div></div>
+        <div class="stat blue"><div class="stat-num" style="font-size:36px;">4</div><div class="stat-label">Active projects</div></div>
+        <div class="stat purple"><div class="stat-num" style="font-size:36px;">45</div><div class="stat-label">Dependency-linked</div></div>
+        <div class="stat green"><div class="stat-num" style="font-size:36px;">2</div><div class="stat-label">Closed</div></div>
+      </div>
+      <div class="tbl-wrap tbl-compact">
+        <table>
+          <thead><tr><th>Project</th><th>Issues</th><th>What's tracked</th><th>Linear</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>GitHub Migration</strong></td>
+              <td><span class="badge badge-gold">22</span></td>
+              <td class="td-muted">6 services complete ✅ · infra (org, mirrors, runners, WIF) · research (repo audit, CI audit, secrets validation) · designs (Plan B, Plan C, CI standard) · 5 open gaps</td>
+              <td class="td-mono td-dim">BN-5261…5304</td>
+            </tr>
+            <tr>
+              <td><strong>Credit Limit Hard Reset</strong></td>
+              <td><span class="badge badge-blue">10</span></td>
+              <td class="td-muted">CG epic root → problem node → 8 phased issues (Phase 0–4) chained with <code>bd dep add</code> · Eval harness on Phase 1c · approval_trigger gap flagged</td>
+              <td class="td-mono td-dim">BN-5384…5391</td>
+            </tr>
+            <tr>
+              <td><strong>B2P Pipeline</strong></td>
+              <td><span class="badge badge-dim">5</span></td>
+              <td class="td-muted">Architecture spike · DAG design (nodes, edges, category variants) · context manifest YAMLs · GitHub Actions trigger chain · pipeline-scribe MCP prototype</td>
+              <td class="td-mono td-dim">—</td>
+            </tr>
+            <tr>
+              <td><strong>Beads Shared-Mem</strong></td>
+              <td><span class="badge badge-dim">4</span></td>
+              <td class="td-muted">GCP VM + Dolt sql-server + GCS backup · 4 phases: provision → configure → developer rollout → validation (BN-5380). Phase 1 in progress.</td>
+              <td class="td-mono td-dim">BN-5380</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
