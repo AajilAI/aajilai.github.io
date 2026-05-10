@@ -941,22 +941,22 @@
           <div style="margin-top:16px;padding:8px 12px;background:var(--red-dim);border-radius:6px;font-size:12px;color:var(--red);font-weight:600;text-align:center;">Current experiment → abandoned</div>
         </div>
 
-        <!-- Separate Repos -->
+        <!-- Submodule -->
         <div class="card" style="border-top:3px solid var(--gold);display:flex;flex-direction:column;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;">Separate Repos</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;">Submodule</div>
           <div style="font-family:var(--mono);font-size:12px;line-height:1.9;background:var(--surface);border-radius:8px;padding:14px 16px;color:var(--text-muted);flex:1;">
-            <div style="color:var(--text);font-weight:600;margin-bottom:2px;">myDevArea/</div>
-            <div>├─ bb/&nbsp;&nbsp; <span style="color:var(--text-dim)">(.git)</span></div>
-            <div>├─ asq/ <span style="color:var(--text-dim)">(.git)</span></div>
-            <div>├─ wsq/ <span style="color:var(--text-dim)">(.git)</span></div>
-            <div>└─ meta/ <span style="color:var(--text-dim)">(shared)</span></div>
+            <div style="color:var(--text);font-weight:600;margin-bottom:2px;">aajil-mono/</div>
+            <div>├─ bb/&nbsp;&nbsp; <span style="color:var(--text-dim)">(submodule)</span></div>
+            <div>├─ asq/ <span style="color:var(--text-dim)">(submodule)</span></div>
+            <div>├─ wsq/ <span style="color:var(--text-dim)">(submodule)</span></div>
+            <div>└─ meta/</div>
           </div>
           <ul class="item-list" style="margin-top:16px;gap:6px;">
-            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">1 push per service</span></li>
             <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Full history per svc</span></li>
-            <li><span class="bullet" style="color:var(--green)">✓</span><span style="font-size:14px;">Deploy independently</span></li>
+            <li><span class="bullet" style="color:var(--red)">✗</span><span style="font-size:14px;">Complex submodule mgmt</span></li>
+            <li><span class="bullet" style="color:var(--red)">✗</span><span style="font-size:14px;">Coupled checkout</span></li>
           </ul>
-          <div style="margin-top:16px;padding:8px 12px;background:var(--gold-glow);border-radius:6px;font-size:12px;color:var(--gold-dim);font-weight:600;text-align:center;">Similar to Rahat's proposal · Manual clone · Self-managed</div>
+          <div style="margin-top:16px;padding:8px 12px;background:var(--gold-glow);border-radius:6px;font-size:12px;color:var(--gold-dim);font-weight:600;text-align:center;">Similar to Rahat's proposal</div>
         </div>
 
         <!-- Chosen: Option 2 + build-os brain -->
