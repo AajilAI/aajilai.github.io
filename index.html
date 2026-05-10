@@ -641,57 +641,13 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 3: STATUS DASHBOARD ══ -->
-  <div class="slide" id="s3">
-    <div class="slide-inner">
-      <div class="eyebrow">Status at a Glance · May 2026</div>
-      <h2>Platform Health</h2>
-      <div class="stat-grid">
-        <div class="stat gold">
-          <div class="stat-num">141</div>
-          <div class="stat-label">Repos mirrored to GitHub</div>
-        </div>
-        <div class="stat green">
-          <div class="stat-num">10</div>
-          <div class="stat-label">Services fully migrated</div>
-        </div>
-        <div class="stat blue">
-          <div class="stat-num">10</div>
-          <div class="stat-label">Active AIDX hooks</div>
-        </div>
-        <div class="stat purple">
-          <div class="stat-num">6</div>
-          <div class="stat-label">Specialist agents</div>
-        </div>
-      </div>
-      <div class="tbl-wrap tbl-compact" style="margin-top:28px;">
-        <table>
-          <thead><tr><th>Service</th><th>GitHub</th><th>Secrets</th><th>CI</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td class="td-mono">asquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-gold">Plan B · GitHub Secrets</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">bookish-beaver</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">rsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">wsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">tsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">csquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">document-management-domain</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">aisol-session-management</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">aisol-document-processors</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">risk-dms</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
-            <tr><td class="td-mono">auth · persistent-panda · autocras · +1</td><td><span class="badge badge-dim">Pending</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">Pending</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
   <!-- ══════════════════════════════════════════ SLIDE 4: SECTION — AIDX ══ -->
   <div class="slide section-slide" id="s4">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 1 of 3</div>
       <h1>AIDX</h1>
       <p class="subtitle" style="max-width:520px;margin-top:16px;">
-        The AI-native developer experience layer. Ten hooks, six agents, seven slash commands, and a versioned knowledge brain — all running inside Claude Code.
+        The AI-native developer experience layer. Ten hooks, six agents, seven skills, and a versioned knowledge brain — all running inside Claude Code.
       </p>
       <div class="section-num">01</div>
     </div>
@@ -710,7 +666,7 @@
             <tr><td class="td-dim">2</td><td class="td-mono">log-prompt</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Captures every prompt per-contributor per-service to daily dated log files</td></tr>
             <tr><td class="td-dim">3</td><td class="td-mono">enforce-workspace-updates</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted">Forces What's New + README + CLAUDE.md sync on any developer-visible change</td></tr>
             <tr><td class="td-dim">4</td><td class="td-mono">enforce-script-to-file</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted"><strong>Blocks inline multi-line bash.</strong> All scripts must be written to meta/scripts/ first — zero /tmp usage</td></tr>
-            <tr><td class="td-dim">5</td><td class="td-mono">sync-commands-table</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates the slash commands table in CLAUDE.md whenever a skill changes</td></tr>
+            <tr><td class="td-dim">5</td><td class="td-mono">sync-commands-table</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates the skills table in CLAUDE.md whenever a skill file changes</td></tr>
             <tr><td class="td-dim">6</td><td class="td-mono">update-meta-graph</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates GRAPH.md (Obsidian knowledge graph index) on every meta/ write</td></tr>
             <tr><td class="td-dim">7</td><td class="td-mono">auto-commit-meta</td><td class="td-dim">Stop</td><td class="td-muted">Auto-commits meta/ changes so no brain update is ever lost between sessions</td></tr>
             <tr><td class="td-dim">8</td><td class="td-mono">rtk-rewrite</td><td class="td-dim">PreToolUse: Bash (global)</td><td class="td-muted">RTK proxy rewrites git/bash commands through the token filter — <strong>60–90% token savings</strong> on dev operations</td></tr>
@@ -726,8 +682,8 @@
   <div class="slide" id="s6">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
-      <h2>Slash Commands</h2>
-      <p class="subtitle" style="margin-bottom:4px;">Domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
+      <h2>Skills</h2>
+      <p class="subtitle" style="margin-bottom:4px;">Invoked as <code>/skill-name</code> — domain-prefixed: <code>github-</code> for repo/CI · <code>linear-</code> for tickets · <code>sentry-</code> for observability</p>
       <div class="tbl-wrap tbl-compact" style="margin-top:12px;">
         <table>
           <thead><tr><th>Command</th><th>Domain</th><th>Purpose</th></tr></thead>
@@ -1399,19 +1355,19 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 21: WHAT'S NEXT ══ -->
-  <div class="slide" id="s21">
+  <!-- ══════════════════════════════════════════ SLIDE: AIDX WHAT'S NEXT ══ -->
+  <div class="slide" id="s21-aidx">
     <div class="slide-inner">
-      <div class="eyebrow">Roadmap</div>
-      <h2>What's Next</h2>
+      <div class="eyebrow">AIDX · Roadmap</div>
+      <h2>AIDX — What's Next</h2>
       <div class="next-grid">
         <div class="next-item">
           <span class="ni-icon">🧠</span>
-          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: slash command surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
+          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
         </div>
         <div class="next-item">
           <span class="ni-icon">🔧</span>
-          <div class="ni-text"><strong>Slash command surgery (BN-5368)</strong><br>Retire <code>/infra-costs</code> <code>/slack-announce</code> <code>/subtree-add</code>. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
+          <div class="ni-text"><strong>Skills surgery (BN-5368)</strong><br>Retire stale skills. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
         </div>
         <div class="next-item">
           <span class="ni-icon">🚨</span>
@@ -1429,6 +1385,16 @@
           <span class="ni-icon">🛡</span>
           <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE: GITHUB WHAT'S NEXT ══ -->
+  <div class="slide" id="s21-github">
+    <div class="slide-inner">
+      <div class="eyebrow">GitHub Transition · Roadmap</div>
+      <h2>GitHub — What's Next</h2>
+      <div class="next-grid">
         <div class="next-item">
           <span class="ni-icon">🔒</span>
           <div class="ni-text"><strong>Org hardening + SHA pinning</strong><br>2FA enforcement, disable members_can_create (Phase 0). Pin all third-party Actions to commit SHAs (BN-5304).</div>
@@ -1437,6 +1403,50 @@
           <span class="ni-icon">🚀</span>
           <div class="ni-text"><strong>Transition 5 remaining services</strong><br>auth · persistent-panda · autocras · notification-center · thoth-scribe · opportunity</div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE: PLATFORM HEALTH ══ -->
+  <div class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="eyebrow">Status at a Glance · May 2026</div>
+      <h2>Platform Health</h2>
+      <div class="stat-grid">
+        <div class="stat gold">
+          <div class="stat-num">141</div>
+          <div class="stat-label">Repos mirrored to GitHub</div>
+        </div>
+        <div class="stat green">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Services fully migrated</div>
+        </div>
+        <div class="stat blue">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Active AIDX hooks</div>
+        </div>
+        <div class="stat purple">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Specialist agents</div>
+        </div>
+      </div>
+      <div class="tbl-wrap tbl-compact" style="margin-top:28px;">
+        <table>
+          <thead><tr><th>Service</th><th>GitHub</th><th>Secrets</th><th>CI</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="td-mono">asquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-gold">Plan B · GitHub Secrets</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">bookish-beaver</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">rsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">wsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">tsquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">csquare</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">document-management-domain</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">aisol-session-management</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">aisol-document-processors</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">risk-dms</td><td><span class="badge badge-green badge-dot">Migrated</span></td><td><span class="badge badge-green">Plan C · GSM+WIF</span></td><td><span class="badge badge-green">Green</span></td><td><span class="badge badge-green">Complete</span></td></tr>
+            <tr><td class="td-mono">auth · persistent-panda · autocras · +1</td><td><span class="badge badge-dim">Pending</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">—</span></td><td><span class="badge badge-dim">Pending</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -1453,7 +1463,7 @@ document.getElementById('tot').textContent = total;
 
 // Build nav dots
 const dotsEl = document.getElementById('nav-dots');
-const sectionSlides = new Set([3, 10, 18]); // 0-indexed: AIDX=3, GitHub=10, Secrets=18
+const sectionSlides = new Set([2, 9, 17]); // 0-indexed: AIDX=2, GitHub=9, Secrets=17
 slides.forEach((_, i) => {
   const d = document.createElement('div');
   d.className = 'dot' + (sectionSlides.has(i) ? ' section-dot' : '');
