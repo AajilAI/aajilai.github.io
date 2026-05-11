@@ -940,10 +940,6 @@
       <div class="eyebrow">AIDX · Roadmap</div>
       <h2>AIDX — What's Next</h2>
       <div class="next-grid">
-        <div class="next-item" style="border-color:rgba(255,90,90,0.35);background:rgba(255,90,90,0.04);">
-          <span class="ni-icon">🧪</span>
-          <div class="ni-text"><strong style="color:var(--red);">EVAL Harness — Priority Next Step</strong><br>Golden dataset per agent + regression CI job + LLM-as-judge scoring. The missing quality floor before AIDX scales to the full team.</div>
-        </div>
         <div class="next-item">
           <span class="ni-icon">🧠</span>
           <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
@@ -1211,13 +1207,12 @@
           </div>
         </div>
         <div>
-          <div style="color:var(--red);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Blacksmith — Blocked</div>
-          <div class="card" style="border-color:rgba(255,90,90,0.2);">
-            <div style="font-size:13px;font-weight:600;margin-bottom:8px;">30 runners registered · 0 usable</div>
+          <div style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Blacksmith — Pending Config</div>
+          <div class="card" style="border-color:rgba(240,179,64,0.2);">
+            <div style="font-size:13px;font-weight:600;margin-bottom:8px;">30 runners registered · label config pending</div>
             <ul class="item-list" style="gap:8px;">
-              <li><span class="bullet" style="color:var(--red)">✗</span><span style="font-size:13px;"><strong>Label mismatch</strong> — CI jobs request <code>backend-runner</code>. Blacksmith labels don't include this tag.</span></li>
-              <li><span class="bullet" style="color:var(--text-dim)">→</span><span style="font-size:13px;">Decision: continue on self-hosted runners until Blacksmith resolves label alignment</span></li>
-              <li><span class="bullet" style="color:var(--text-dim)">→</span><span style="font-size:13px;">.env files are <strong>not</strong> a Blacksmith blocker — they're generated at runtime and deleted after scp</span></li>
+              <li><span class="bullet" style="color:var(--gold)">▸</span><span style="font-size:13px;">CI jobs request <code>backend-runner</code> — label needs to be added in Blacksmith runner settings</span></li>
+              <li><span class="bullet" style="color:var(--text-dim)">→</span><span style="font-size:13px;">Currently running on self-hosted runners. Blacksmith takes over once label is configured.</span></li>
             </ul>
           </div>
           <div style="margin-top:20px;">
@@ -1352,90 +1347,10 @@
             <li><span class="bullet">▸</span><span><strong>Branch protection</strong> — not yet applied to rsquare and wsquare (Phase 4)</span></li>
             <li><span class="bullet">▸</span><span><strong>SHA pinning (BN-5304)</strong> — all third-party Actions need pinning to exact commit SHAs</span></li>
             <li><span class="bullet">▸</span><span><strong>Org hardening</strong> — 2FA enforcement + disable members_can_create (Phase 0)</span></li>
-            <li><span class="bullet">▸</span><span><strong>Blacksmith label alignment</strong> — coordinate with Blacksmith to add <code>backend-runner</code> label</span></li>
+            <li><span class="bullet">▸</span><span><strong>Blacksmith runner config</strong> — <code>backend-runner</code> label needs to be added in Blacksmith settings</span></li>
             <li><span class="bullet">▸</span><span><strong>Shared workflows (BN-5289)</strong> — 8 reusable workflows needed before automated PR gates</span></li>
           </ul>
-          <div style="margin-top:20px;color:var(--red);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Critical Gap — No EVAL Harness</div>
-          <ul class="item-list">
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Agent outputs are not evaluated.</strong> No benchmark suite, no regression detection — we cannot tell if a model upgrade or hook change degrades quality.</span></li>
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>No quality floor.</strong> Standards enforced at write-time, but correctness of agent reasoning is reviewed manually only — does not scale.</span></li>
-          </ul>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE: EVAL HARNESS ══ -->
-  <div class="slide" id="s19b">
-    <div class="slide-inner">
-      <div class="eyebrow">Critical Gap · AIDX</div>
-      <h2>Missing: EVAL Harness</h2>
-      <p class="subtitle" style="margin-bottom:4px;">We ship standards, agents, and hooks — but have no systematic way to know if they're working. The platform has no quality floor.</p>
-      <div class="two-col" style="margin-top:20px;gap:24px;">
-        <div>
-          <div style="color:var(--red);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Why This Is a Weak Point</div>
-          <ul class="item-list">
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Model upgrades are blind.</strong> When Claude 4.7 ships, we have no benchmark to know if our agents regress. We find out in production — or not at all.</span></li>
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Hook changes are untested.</strong> A broken hook silently degrades every session. No test suite catches it before it ships.</span></li>
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Agent quality is purely manual.</strong> Output correctness depends on one person catching issues in review. That doesn't scale to 10+ engineers using AIDX.</span></li>
-            <li><span class="bullet" style="color:var(--red)">!</span><span><strong>Standards drift is invisible.</strong> We can't tell if agents actually follow <code>meta/lex/</code> rules or just appear to. No coverage metric exists.</span></li>
-          </ul>
-        </div>
-        <div>
-          <div style="color:var(--green);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">What the Harness Should Do</div>
-          <ul class="item-list">
-            <li><span class="bullet" style="color:var(--green)">▸</span><span><strong>Golden dataset.</strong> Representative prompts per agent — each with known-good outputs and machine-checkable assertions (format, required sections, no banned patterns).</span></li>
-            <li><span class="bullet" style="color:var(--green)">▸</span><span><strong>Regression CI job.</strong> Runs on every AIDX change (hooks, agents, lex). Fails the build if quality score drops below threshold.</span></li>
-            <li><span class="bullet" style="color:var(--green)">▸</span><span><strong>Model upgrade gate.</strong> Before adopting a new Claude version, run the full suite. Promote only if pass rate ≥ baseline.</span></li>
-            <li><span class="bullet" style="color:var(--green)">▸</span><span><strong>LLM-as-judge scoring.</strong> Use Claude itself to score outputs against rubrics defined in <code>meta/lex/</code> — structured verdict, not free-form commentary.</span></li>
-          </ul>
-          <div style="margin-top:16px;padding:12px 16px;background:rgba(255,90,90,0.06);border:1px solid rgba(255,90,90,0.25);border-radius:10px;font-size:13px;color:var(--text-muted);">
-            Without this, AIDX is a bet that things are working. With it, quality becomes measurable and the platform is safe to scale to the full team.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="position:absolute;bottom:24px;left:60px;right:80px;font-size:11px;color:var(--text-dim);border-top:1px solid var(--border);padding-top:8px;">
-      ↗ <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--border);">Anthropic — Building Effective Agents</a>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ EVAL: THREE-TIER ARCHITECTURE ══ -->
-  <div class="slide" id="s19c">
-    <div class="slide-inner">
-      <div class="eyebrow">EVAL Harness · Blueprint</div>
-      <h2>Three-Tier Eval Architecture</h2>
-      <div class="three-col" style="margin-top:20px;gap:16px;">
-        <div class="card" style="border-color:rgba(45,212,160,0.3);">
-          <div style="color:var(--green);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;">Tier 1 · Deterministic — CI/CD</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">Hard guardrails. Run on every commit. Binary pass/fail.</div>
-          <ul class="item-list" style="gap:8px;">
-            <li><span class="bullet" style="color:var(--green);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Constraint checks</strong> — agent output violates a rule (concentration limit, schema) → fail</span></li>
-            <li><span class="bullet" style="color:var(--green);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Schema validation</strong> — structured output must be ingestible by downstream systems</span></li>
-            <li><span class="bullet" style="color:var(--green);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Tool-use accuracy</strong> — did the agent call the right tool with the right parameters?</span></li>
-          </ul>
-        </div>
-        <div class="card" style="border-color:rgba(77,158,255,0.3);">
-          <div style="color:var(--blue);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;">Tier 2 · Model-Based — LLM Judge</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">Use a stronger model to grade outputs. Runs on PR merge and nightly.</div>
-          <ul class="item-list" style="gap:8px;">
-            <li><span class="bullet" style="color:var(--blue);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Alignment scoring</strong> — output vs. golden dataset of expert-curated examples</span></li>
-            <li><span class="bullet" style="color:var(--blue);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Reasoning consistency</strong> — does the agent's rationale logically support its decision?</span></li>
-            <li><span class="bullet" style="color:var(--blue);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Sensitivity analysis</strong> — small input changes shouldn't cause erratic output swings</span></li>
-          </ul>
-        </div>
-        <div class="card" style="border-color:rgba(155,109,255,0.3);">
-          <div style="color:var(--purple);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;">Tier 3 · HITL — Shadow Mode</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">In a financial/regulated context you cannot automate 100% of trust.</div>
-          <ul class="item-list" style="gap:8px;">
-            <li><span class="bullet" style="color:var(--purple);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Shadow production</strong> — run new agent logic live, don't execute. Compare to what the current system did.</span></li>
-            <li><span class="bullet" style="color:var(--purple);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Trajectory testing</strong> — test sequences, not single prompts. Does the agent adapt logically across steps?</span></li>
-            <li><span class="bullet" style="color:var(--purple);font-size:13px;">▸</span><span style="font-size:13px;"><strong>Human sign-off gate</strong> — escalate edge cases to a reviewer before promotion to active logic</span></li>
-          </ul>
-        </div>
-      </div>
-      <div style="margin-top:16px;padding:12px 16px;background:rgba(240,179,64,0.06);border:1px solid rgba(240,179,64,0.2);border-radius:10px;font-size:13px;color:var(--text-muted);">
-        <strong style="color:var(--gold);">Golden Rule:</strong> Never ship a prompt change without running it against your 50 most critical historical scenarios. If the agent reaches a different conclusion for an old case, you need to know exactly <em>why</em> before it goes live.
       </div>
     </div>
   </div>
