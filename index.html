@@ -914,7 +914,44 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 11: WINS ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 11: AIDX WHAT'S NEXT ══ -->
+  <div class="slide" id="s12-aidx-next">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Roadmap</div>
+      <h2>AIDX — What's Next</h2>
+      <div class="next-grid">
+        <div class="next-item">
+          <span class="ni-icon">🧠</span>
+          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🔧</span>
+          <div class="ni-text"><strong>Skills surgery (BN-5368)</strong><br>Retire stale skills. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🚨</span>
+          <div class="ni-text"><strong>Sentry MCP + @sentry-triage (BN-5369)</strong><br>Real-time error loop: Sentry alert → @sentry-triage → patch → PR. Closes the gap between monitoring and fix — zero manual Slack relay.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🔀</span>
+          <div class="ni-text"><strong>@pr-reviewer fan-out (BN-5370)</strong><br>Spawn @code-reviewer + @devops in parallel on every GitHub PR. Inline comments via <code>claude-code-action</code>, not report files.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">♻️</span>
+          <div class="ni-text"><strong>Iterate-until-CI-green (BN-5371)</strong><br>@software-developer self-corrects until CI passes or hits 3-iteration hard stop. Autonomous code → test → fix loop scoped to the failing job.</div>
+        </div>
+        <div class="next-item">
+          <span class="ni-icon">🛡</span>
+          <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:24px;left:60px;right:80px;font-size:11px;color:var(--text-dim);border-top:1px solid var(--border);padding-top:8px;">
+      ↗ <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--border);">OWASP Top 10 for Agentic Applications (2026)</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE 12: WINS ══ -->
   <div class="slide" id="s11">
     <div class="slide-inner">
       <div class="eyebrow">18 Days · May 2026</div>
@@ -972,44 +1009,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 12: AIDX WHAT'S NEXT ══ -->
-  <div class="slide" id="s12-aidx-next">
-    <div class="slide-inner">
-      <div class="eyebrow">AIDX · Roadmap</div>
-      <h2>AIDX — What's Next</h2>
-      <div class="next-grid">
-        <div class="next-item">
-          <span class="ni-icon">🧠</span>
-          <div class="ni-text"><strong>AIDX Phase II — Agent Loop (BN-5367)</strong><br>Five parallel tracks: skills surgery, Sentry MCP, fan-out review, iterate-until-green, inline PR comments. Goal: BN ticket to merged PR in one session.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🔧</span>
-          <div class="ni-text"><strong>Skills surgery (BN-5368)</strong><br>Retire stale skills. Add <code>/sentry</code> <code>/pr-review</code> <code>/standup</code> <code>/debug</code> <code>/release-check</code>.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🚨</span>
-          <div class="ni-text"><strong>Sentry MCP + @sentry-triage (BN-5369)</strong><br>Real-time error loop: Sentry alert → @sentry-triage → patch → PR. Closes the gap between monitoring and fix — zero manual Slack relay.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🔀</span>
-          <div class="ni-text"><strong>@pr-reviewer fan-out (BN-5370)</strong><br>Spawn @code-reviewer + @devops in parallel on every GitHub PR. Inline comments via <code>claude-code-action</code>, not report files.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">♻️</span>
-          <div class="ni-text"><strong>Iterate-until-CI-green (BN-5371)</strong><br>@software-developer self-corrects until CI passes or hits 3-iteration hard stop. Autonomous code → test → fix loop scoped to the failing job.</div>
-        </div>
-        <div class="next-item">
-          <span class="ni-icon">🛡</span>
-          <div class="ni-text"><strong>@code-reviewer enrichment (BN-5372)</strong><br>Inline GitHub PR comments, OWASP Agentic Top 10 gate, fintech-specific security checks (PII exposure, audit trail gaps).</div>
-        </div>
-      </div>
-    </div>
-    <div style="position:absolute;bottom:24px;left:60px;right:80px;font-size:11px;color:var(--text-dim);border-top:1px solid var(--border);padding-top:8px;">
-      ↗ <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--border);">OWASP Top 10 for Agentic Applications (2026)</a>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE 12: SECTION — GITHUB ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 13: SECTION — GITHUB ══ -->
   <div class="slide section-slide" id="s12">
     <div class="slide-inner" style="position:relative;">
       <div class="eyebrow">Part 2 of 3</div>
