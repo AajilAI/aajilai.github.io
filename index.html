@@ -723,32 +723,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ SLIDE 6: AIDX HOOKS ══ -->
-  <div class="slide" id="s6">
-    <div class="slide-inner">
-      <div class="eyebrow">AIDX · Part 1</div>
-      <h2>10 Active Hooks</h2>
-      <div class="tbl-wrap tbl-compact" style="margin-top:16px;">
-        <table>
-          <thead><tr><th>#</th><th>Hook</th><th>Trigger</th><th>What it enforces</th></tr></thead>
-          <tbody>
-            <tr><td class="td-dim">1</td><td class="td-mono">sync-memory-index</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Keeps MEMORY.md current whenever a memory file changes</td></tr>
-            <tr><td class="td-dim">2</td><td class="td-mono">log-prompt</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Captures every prompt per-contributor per-service to daily dated log files</td></tr>
-            <tr><td class="td-dim">3</td><td class="td-mono">enforce-workspace-updates</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted">Forces What's New + README + CLAUDE.md sync on any developer-visible change</td></tr>
-            <tr><td class="td-dim">4</td><td class="td-mono">enforce-script-to-file</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted"><strong>Blocks inline multi-line bash.</strong> All scripts must be written to meta/scripts/ first — zero /tmp usage</td></tr>
-            <tr><td class="td-dim">5</td><td class="td-mono">sync-commands-table</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates the skills table in CLAUDE.md whenever a skill file changes</td></tr>
-            <tr><td class="td-dim">6</td><td class="td-mono">update-meta-graph</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates GRAPH.md (Obsidian knowledge graph index) on every meta/ write</td></tr>
-            <tr><td class="td-dim">7</td><td class="td-mono">auto-commit-meta</td><td class="td-dim">Stop</td><td class="td-muted">Auto-commits meta/ changes so no brain update is ever lost between sessions</td></tr>
-            <tr><td class="td-dim">8</td><td class="td-mono">rtk-rewrite</td><td class="td-dim">PreToolUse: Bash (global)</td><td class="td-muted">RTK proxy rewrites git/bash commands through the token filter — <strong>60–90% token savings</strong> on dev operations</td></tr>
-            <tr><td class="td-dim">9</td><td class="td-mono">bd prime (session)</td><td class="td-dim">SessionStart (global)</td><td class="td-muted">Restores full beads project intelligence context on every new Claude Code session</td></tr>
-            <tr><td class="td-dim">10</td><td class="td-mono">bd prime (compact)</td><td class="td-dim">PreCompact (global)</td><td class="td-muted">Re-injects beads context before context window compression so no tracking is lost</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════ SLIDE 7: AGENTS ══ -->
+  <!-- ══════════════════════════════════════════ SLIDE 6: AGENTS ══ -->
   <div class="slide" id="s7">
     <div class="slide-inner">
       <div class="eyebrow">AIDX · Part 1</div>
@@ -874,6 +849,31 @@
               <td class="td-muted">GCP VM + Dolt sql-server + GCS backup · 4 phases: provision → configure → developer rollout → validation (BN-5380). Phase 1 in progress.</td>
               <td class="td-mono td-dim">BN-5380</td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ SLIDE: AIDX HOOKS ══ -->
+  <div class="slide" id="s9b">
+    <div class="slide-inner">
+      <div class="eyebrow">AIDX · Part 1</div>
+      <h2>10 Active Hooks</h2>
+      <div class="tbl-wrap tbl-compact" style="margin-top:16px;">
+        <table>
+          <thead><tr><th>#</th><th>Hook</th><th>Trigger</th><th>What it enforces</th></tr></thead>
+          <tbody>
+            <tr><td class="td-dim">1</td><td class="td-mono">sync-memory-index</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Keeps MEMORY.md current whenever a memory file changes</td></tr>
+            <tr><td class="td-dim">2</td><td class="td-mono">log-prompt</td><td class="td-dim">UserPromptSubmit</td><td class="td-muted">Captures every prompt per-contributor per-service to daily dated log files</td></tr>
+            <tr><td class="td-dim">3</td><td class="td-mono">enforce-workspace-updates</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted">Forces What's New + README + CLAUDE.md sync on any developer-visible change</td></tr>
+            <tr><td class="td-dim">4</td><td class="td-mono">enforce-script-to-file</td><td class="td-dim">PreToolUse: Bash</td><td class="td-muted"><strong>Blocks inline multi-line bash.</strong> All scripts must be written to meta/scripts/ first — zero /tmp usage</td></tr>
+            <tr><td class="td-dim">5</td><td class="td-mono">sync-commands-table</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates the skills table in CLAUDE.md whenever a skill file changes</td></tr>
+            <tr><td class="td-dim">6</td><td class="td-mono">update-meta-graph</td><td class="td-dim">PostToolUse: Write/Edit</td><td class="td-muted">Regenerates GRAPH.md (Obsidian knowledge graph index) on every meta/ write</td></tr>
+            <tr><td class="td-dim">7</td><td class="td-mono">auto-commit-meta</td><td class="td-dim">Stop</td><td class="td-muted">Auto-commits meta/ changes so no brain update is ever lost between sessions</td></tr>
+            <tr><td class="td-dim">8</td><td class="td-mono">rtk-rewrite</td><td class="td-dim">PreToolUse: Bash (global)</td><td class="td-muted">RTK proxy rewrites git/bash commands through the token filter — <strong>60–90% token savings</strong> on dev operations</td></tr>
+            <tr><td class="td-dim">9</td><td class="td-mono">bd prime (session)</td><td class="td-dim">SessionStart (global)</td><td class="td-muted">Restores full beads project intelligence context on every new Claude Code session</td></tr>
+            <tr><td class="td-dim">10</td><td class="td-mono">bd prime (compact)</td><td class="td-dim">PreCompact (global)</td><td class="td-muted">Re-injects beads context before context window compression so no tracking is lost</td></tr>
           </tbody>
         </table>
       </div>
