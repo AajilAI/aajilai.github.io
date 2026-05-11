@@ -714,8 +714,7 @@
             <tr><td class="td-mono">/github-review [files]</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">Full review workflow: local review → auto-fix → commit → post GitHub comment → approve → merge</td></tr>
             <tr><td class="td-mono">/github-migrate-service &lt;service&gt;</td><td><span class="badge badge-blue" style="font-size:10px;">github</span></td><td class="td-muted">CI migration gate — validates secrets, reconcile, and CI workflow</td></tr>
             <tr><td class="td-mono">/linear-triage &lt;csv|issues&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Batch-create Linear tickets with actor vocabulary and templates</td></tr>
-            <tr><td class="td-mono">/linear-cycle-report &lt;current|previous&gt;</td><td><span class="badge badge-gold" style="font-size:10px;">linear</span></td><td class="td-muted">Sprint performance report correcting for Linear's auto-move inflation</td></tr>
-            <tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
+<tr><td class="td-mono">/sentry-debug &lt;issue-id&gt;</td><td><span class="badge badge-red" style="font-size:10px;">sentry</span></td><td class="td-muted">Alert → root cause → patch → PR <span class="badge badge-dim" style="font-size:10px;">BN-5369</span></td></tr>
             <tr><td class="td-mono">/nvim-spawn</td><td><span class="badge badge-purple" style="font-size:10px;">tooling</span></td><td class="td-muted">Spawn a numbered Claude Code session in the running nvim instance and send it a task</td></tr>
           </tbody>
         </table>
@@ -1293,14 +1292,35 @@
               <td><span class="badge badge-green">Complete</span></td>
             </tr>
             <tr>
-              <td class="td-mono">auth · thoth-scribe · opportunity</td>
+              <td class="td-mono">auth</td>
               <td><span class="badge badge-dim">Pending</span></td>
               <td class="td-dim">—</td>
               <td><span class="badge badge-dim">No CI</span></td>
-              <td><span class="badge badge-dim">Pending</span></td>
+              <td><span class="badge badge-dim">Code + secrets only</span></td>
             </tr>
             <tr>
-              <td class="td-mono">persistent-panda · autocras · notification-center</td>
+              <td class="td-mono">notification-center</td>
+              <td><span class="badge badge-dim">Pending</span></td>
+              <td class="td-dim">—</td>
+              <td><span class="badge badge-dim">No CI</span></td>
+              <td><span class="badge badge-dim">Code + secrets only</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">thoth-scribe</td>
+              <td><span class="badge badge-dim">Pending</span></td>
+              <td class="td-dim">—</td>
+              <td><span class="badge badge-dim">New · No CI</span></td>
+              <td><span class="badge badge-dim">Code + secrets only</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">opportunity</td>
+              <td><span class="badge badge-dim">Pending</span></td>
+              <td class="td-dim">—</td>
+              <td><span class="badge badge-dim">Package · No CI</span></td>
+              <td><span class="badge badge-dim">Code + secrets only</span></td>
+            </tr>
+            <tr>
+              <td class="td-mono">persistent-panda · autocras</td>
               <td><span class="badge badge-dim">Pending</span></td>
               <td class="td-dim">—</td>
               <td class="td-dim">—</td>
