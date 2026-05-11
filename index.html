@@ -1440,43 +1440,6 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════ EVAL: PRODUCTION MONITORING ══ -->
-  <div class="slide" id="s19d">
-    <div class="slide-inner">
-      <div class="eyebrow">EVAL Harness · Blueprint</div>
-      <h2>Production Monitoring + Tooling</h2>
-      <div class="two-col" style="margin-top:20px;gap:28px;">
-        <div>
-          <div style="color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Live Harness — What to Measure</div>
-          <div class="tbl-wrap tbl-compact">
-            <table>
-              <thead><tr><th>Signal</th><th>Metric</th><th>Why it matters</th></tr></thead>
-              <tbody>
-                <tr><td class="td-mono" style="font-size:12px;">Semantic Drift</td><td class="td-muted">Embedding distance</td><td class="td-dim">Detects if inputs shift into territory the agent wasn't trained for</td></tr>
-                <tr><td class="td-mono" style="font-size:12px;">Tool Latency</td><td class="td-muted">P99 of simulation</td><td class="td-dim">Agentic calls are expensive — timeouts cascade silently</td></tr>
-                <tr><td class="td-mono" style="font-size:12px;">Rejection Rate</td><td class="td-muted">% guardrail hits</td><td class="td-dim">High rate = agent getting "creative" outside allowed boundaries</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="margin-top:16px;padding:12px 16px;background:rgba(255,90,90,0.06);border:1px solid rgba(255,90,90,0.2);border-radius:10px;font-size:13px;color:var(--text-muted);">
-            Shipping to production isn't the end — it's the start of data collection. Every production trace is a future golden test case.
-          </div>
-        </div>
-        <div>
-          <div style="color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;">Tooling — Don't Build from Scratch</div>
-          <ul class="item-list" style="gap:12px;">
-            <li><span class="bullet" style="color:var(--gold)">▸</span><span><strong>Promptfoo / LangSmith</strong> — Tier 2 LLM-as-judge evals at scale. Both support golden dataset diffing.</span></li>
-            <li><span class="bullet" style="color:var(--gold)">▸</span><span><strong>Weights &amp; Biases</strong> — Track how different versions of agent logic perform over time. Good for regression graphs.</span></li>
-            <li><span class="bullet" style="color:var(--gold)">▸</span><span><strong>Log10</strong> — Captures production traces and converts them back into golden test cases automatically.</span></li>
-          </ul>
-          <div style="margin-top:16px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;color:var(--text-muted);">
-            <strong style="color:var(--text);">For AIDX specifically:</strong> Tier 1 lives in the existing CI job. Tier 2 can run as a nightly GitHub Actions workflow. Tier 3 is the EVAL Harness beads project — shadow mode against the <code>meta/lex/</code> rubrics.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ══════════════════════════════════════════ SLIDE 20: SECTION — SECRETS ══ -->
   <div class="slide section-slide" id="s20">
     <div class="slide-inner" style="position:relative;">
