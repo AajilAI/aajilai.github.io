@@ -1136,16 +1136,6 @@
                   <td class="td-dim">none — Done</td>
                 </tr>
                 <tr>
-                  <td class="td-mono" style="font-size:11px;">members_can_create_repositories</td>
-                  <td><span class="badge badge-red">true</span></td>
-                  <td class="td-dim">false — Phase 0</td>
-                </tr>
-                <tr>
-                  <td class="td-mono" style="font-size:11px;">two_factor_requirement_enabled</td>
-                  <td><span class="badge badge-red">false</span></td>
-                  <td class="td-dim">true — Phase 0</td>
-                </tr>
-                <tr>
                   <td class="td-mono" style="font-size:11px;">GitHub Environments</td>
                   <td><span class="badge badge-dim">None</span></td>
                   <td class="td-dim">dev/staging/production per service — Phase 3</td>
@@ -1167,7 +1157,6 @@
         <div>
           <div style="color:var(--text-muted);font-size:13px;font-weight:600;margin-bottom:12px;">Phase Roadmap</div>
           <ul class="item-list">
-            <li><span class="bullet">▸</span><span><strong>Phase 0</strong> — 2FA enforcement, disable member repo creation, outside-collaborator review</span></li>
             <li><span class="bullet">▸</span><span><strong>Phase 1</strong> — Migrate remaining 10 services (secrets + CI per service)</span></li>
             <li><span class="bullet">▸</span><span><strong>Phase 2</strong> — Outside collaborator status review (contractor vs org member)</span></li>
             <li><span class="bullet">▸</span><span><strong>Phase 3</strong> — GitHub Environments (dev/staging/production) per migrated service</span></li>
@@ -1346,7 +1335,6 @@
           <ul class="item-list">
             <li><span class="bullet">▸</span><span><strong>Branch protection</strong> — not yet applied to rsquare and wsquare (Phase 4)</span></li>
             <li><span class="bullet">▸</span><span><strong>SHA pinning (BN-5304)</strong> — all third-party Actions need pinning to exact commit SHAs</span></li>
-            <li><span class="bullet">▸</span><span><strong>Org hardening</strong> — 2FA enforcement + disable members_can_create (Phase 0)</span></li>
             <li><span class="bullet">▸</span><span><strong>Blacksmith runner config</strong> — <code>backend-runner</code> label needs to be added in Blacksmith settings</span></li>
             <li><span class="bullet">▸</span><span><strong>Shared workflows (BN-5289)</strong> — 8 reusable workflows needed before automated PR gates</span></li>
           </ul>
@@ -1473,7 +1461,7 @@
       <div class="next-grid">
         <div class="next-item">
           <span class="ni-icon">🔒</span>
-          <div class="ni-text"><strong>Org hardening + SHA pinning</strong><br>2FA enforcement, disable members_can_create (Phase 0). Pin all third-party Actions to commit SHAs (BN-5304).</div>
+          <div class="ni-text"><strong>SHA pinning (BN-5304)</strong><br>Pin all third-party GitHub Actions to exact commit SHAs.</div>
         </div>
         <div class="next-item">
           <span class="ni-icon">🚀</span>
